@@ -1,0 +1,52 @@
+site_name: TechEmpower Framework Benchmarks
+site_url: /
+site_description: Documentation for TechEmpower Framework Benchmarks.
+site_favicon: img/favicon.png
+repo_url: https://github.com/TechEmpower/FrameworkBenchmarks/
+pages: 
+- ['index.md']
+
+# **************************
+# **DROP DOWN MENU OPTIONS** 
+# **************************
+
+# Project Information:
+- ['Project-Information/index.md', 'Project Information']
+- ['Project-Information/Concepts.md', 'Project Information', 'Basic Concepts']
+- ['Project-Information/Framework-Tests.md', 'Project Information', 'Framework Tests']
+- ['Project-Information/Environment.md', 'Project Information', 'Environment']
+- ['Project-Information/Terminology.md', 'Project Information', 'Terminology']
+- ['Project-Information/Expected-Questions.md', 'Project Information', 'Expected Questions']
+
+# Development:
+- ['Development/index.md', 'Development']
+- ['Development/Contributing-Guide.md', 'Development', 'Contributing Guide']
+- ['Development/Getting-Started.md', 'Development', 'Getting Guide']
+- ['Development/Installation-Guide.md', 'Development', 'Installation Guide']
+- ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
+- ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
+- ['Development/Vagrant-Development-Environment.md']
+
+# Benchmarking:
+- ['Benchmarking/index.md', 'Benchmarking']
+- ['Benchmarking/Getting-Started-Benchmarking.md', 'Benchmarking', 'Getting Started']
+- ['Benchmarking/Running-the-Benchmark.md', 'Benchmarking', 'Run the Benchmark']
+
+# Codebase
+- ['Codebase/index.md', 'Codebase']
+- ['Codebase/Configuration-File.md', 'Codebase', 'Configuration File']
+- ['Codebase/Framework-Benchmark-Config-File.md', 'Codebase', 'Benchmark Config File']
+- ['Codebase/Framework-Install-File.md', 'Codebase', 'Install File']
+- ['Codebase/Framework-Setup-File.md', 'Codebase', 'Setup File']
+- ['Codebase/Summary-of-Script-Directories.md', 'Codebase', 'Summary of Script Directories']
+
+# About:
+- ['About/Framework-Benchmarks.md', 'About', 'Framework Benchmarks']
+- ['About/TechEmpower.md', 'About', 'TechEmpower']
+- ['About/Documentation.md', 'About', 'Documentation']
+- ['About/License.md', 'About', 'License']
+
+# Support
+- ['Support/index.md', 'Support']
+- ['Support/Converse.md', 'Support', 'Join the Conversation']
+- ['Support/FAQ.md', 'Support', 'FAQ']
