@@ -15,6 +15,7 @@ pages:
 - ['Project-Information/Concepts.md', 'Project Information', 'Basic Concepts']
 - ['Project-Information/Framework-Tests.md', 'Project Information', 'Framework Tests']
 - ['Project-Information/Environment.md', 'Project Information', 'Environment']
+- ['Project-Information/Travis-CI.md', 'Project Information', 'Travis-CI']
 - ['Project-Information/Expected-Questions.md', 'Project Information', 'Expected Questions']
 
 # Development:
