@@ -34,9 +34,7 @@ pages:
 # Codebase
 - ['Codebase/index.md', 'Codebase']
 - ['Codebase/Configuration-File.md', 'Codebase', 'Configuration File']
-- ['Codebase/Framework-Benchmark-Config-File.md', 'Codebase', 'Benchmark Config File']
-- ['Codebase/Framework-Install-File.md', 'Codebase', 'Install File']
-- ['Codebase/Framework-Setup-File.md', 'Codebase', 'Setup File']
+- ['Codebase/Framework-Files.md', 'Codebase', 'Framework Specific Files']
 - ['Codebase/Summary-of-Script-Directories.md', 'Codebase', 'Summary of Script Directories']
 
 # About:
