@@ -56,7 +56,7 @@ _Note: If testing a pull request or doing development, it is usually adequate
 to only use one computer. In that case, your server, client, and database 
 IPs will be 127.0.0.1._
 
-__Installing the Framework Benchmark App Server__
+## Installing the Framework Benchmark App Server
 
 * Install [Ubuntu 14.04](http://www.ubuntu.com/download/server) with username `tfb`. 
 Ensure that OpenSSH is selected when you install. 
