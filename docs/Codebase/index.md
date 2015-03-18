@@ -29,11 +29,11 @@ Here are the relevant pieces of TFB's file structure:
 * [.travis.yml](#travisyml)
 * [benchmark.cgf(.example)](#benchmarkcfg)
 
-## config/
+### config/
 
 Configuration files for various languages, databases, and servers.
 
-## deployment/
+### deployment/
 
 Information for deploying the benchmark on a range of cloud or 
 self-hosted environments. While you can always use manual deployment, 
@@ -41,7 +41,7 @@ automated scripts exist for many scenarios. Explinations of the
 subdirectories are within 
 [Summary of Script Directories section](Codebase/Summary-of-Script-Directories).
 
-## frameworks/
+### frameworks/
 
 This directory contains all of the framework implementations of the 
 benchmarking suite tests. The general directory structure is Language 
@@ -52,7 +52,7 @@ similar.
 For information on each language, there are individual READMEs within 
 their respective directory. 
 
-### Framework Specific Files
+#### Framework Specific Files
 
 Most of the files are framework specific and you can find more 
 information within their individual READMEs. However, there are three 
@@ -65,12 +65,12 @@ files that are required by the TFB suite. These are:
 See the section on [Framework Specific Files](Codebase/Framework-Files) 
 for more information.
 
-## toolset/
+### toolset/
 
 This directory contains the code that TFB uses to automate installing, 
 launching, load testing, and terminating each framework.
 
-### benchmark/
+#### benchmark/
 
 This directory contains files that implement or support the benchmark feature:
 
@@ -80,7 +80,7 @@ This directory contains files that implement or support the benchmark feature:
 These files are not meant for you to run directly. For instructions on running the 
 benchmark, please refer to the [benchmarking section](Benchmarking).
 
-### setup/
+#### setup/
 
 This directory contains scripts to install the benchmark suite on adequately 
 provisioned hosts. It is composed of these directories:
@@ -89,16 +89,16 @@ linux: Scripts to setup the Linux server and the Linux client and database serve
 sqlserver: Scripts to setup the SQL Server database server.
 windows: Scripts to setup the Windows server.
 
-### test/
+#### test/
 
 Script for [Travis-CI](Project-Information/Travis-CI).
 
-## .travis.yml
+### .travis.yml
 
 Provides Travis-CI with the relevant information to test TFB. See the 
 [Travis-CI](Project-Information/Travis-CI) section for more information.
 
-## benchmark.cfg
+### benchmark.cfg
 
 This file sets up user/environment specific information that TFB needs to 
 know in order to properly run framework tests. See the 
