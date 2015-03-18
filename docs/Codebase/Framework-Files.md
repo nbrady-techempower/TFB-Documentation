@@ -82,7 +82,7 @@ The setup file is responsible for starting the test. This script is responsible 
 The setup file is a shell script that should build the source, make any necessary changes 
 to the framework's configuration, and then start the server.
 
-######Configuring database connectivity
+__Configuring database connectivity__
 
 By convention, the configuration files used by a framework should specify the database 
 server as `localhost` so that developing tests in a single-machine environment can be 
@@ -106,7 +106,7 @@ Note: Using `localhost` in the raw configuration file is not a requirement as lo
 `sed` call properly injects the database host provided to the benchmark toolset as a command 
 line argument.
 
-######A full example
+__A full example__
 
 Here is an example of Wicket's setup file.
 
