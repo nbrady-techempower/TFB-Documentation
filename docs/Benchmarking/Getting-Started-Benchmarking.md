@@ -42,7 +42,6 @@ _Note: As an alternative to the manual setup process, you can use the
 [automated deployment script](#benchmark-suite-automated-deployment)._
 
 __Prerequisites__
----
 
 Before starting setup, all the required hosts must be provisioned, with the 
 respective operating system and required software installed, and with 
@@ -58,7 +57,6 @@ to only use one computer. In that case, your server, client, and database
 IPs will be 127.0.0.1._
 
 __Installing the Framework Benchmark App Server__
----
 
 * Install [Ubuntu 14.04](http://www.ubuntu.com/download/server) with username `tfb`. 
 Ensure that OpenSSH is selected when you install. 
