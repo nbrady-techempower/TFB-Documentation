@@ -1,4 +1,7 @@
-Each script directory has a README, which will contain specific instructions related to seting up the relevant deployment/development environment.
+Each script directory has a README within their respective directory, 
+which will contain specific instructions related to seting up the 
+relevant deployment/development environment. Consult the READMEs for 
+more detailed information.
 
 | Directory Name | Summary |
 | -------------- | :-------- |
