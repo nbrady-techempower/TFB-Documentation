@@ -220,7 +220,6 @@ Specific provisioning instructions and/or scripts for particular hosting or clou
 # Benchmark Suite Deployment
 
 __Required Host Roles__
----
 
 * Client (aka load generation) Server
     * Runs the benchmark client
@@ -235,7 +234,7 @@ __Required Host Roles__
 ## Manual Deployment
 
 __Evaluation downloads__
----
+
 
 If you want to run the benchmark on Windows and/or SQL Server, you can download 
 evaluation versions from Microsoft:
@@ -243,7 +242,6 @@ evaluation versions from Microsoft:
 * [Download SQL Server 2012 SP1](http://www.microsoft.com/betaexperience/pd/SQL2012EvalCTA/enus/default.aspx)
 
 __Prerequisites__
----
 
 Before you get started, there are a couple of steps you can take to make running 
 the tests easier on yourself.
@@ -265,7 +263,6 @@ detailed guidance. You can also refer to the
 [Benchmark Suite Setup section](#benchmark-suite-setup) for more information. 
 
 __Installation and Usage Details__
----
 
 If you choose to run TFB on your own computer, you will need to install 
 passwordless SSH to your `load server` and your `database server` from 
@@ -294,7 +291,6 @@ _Note: This script will be automatically executed by other scripts, such as the
 In this case, you don't need to configure or execute this script yourself._
 
 __Prerequisites__
----
 
 The tooling is cross-platform, based on bash scripts and Unix tools.
 
@@ -303,7 +299,6 @@ The tooling is cross-platform, based on bash scripts and Unix tools.
 * On Linux and OS X, these tools are natively available.
 
 __Configuration__
----
 
 The deployment parameters are provided through a configuration 
 file that you can create in a temporary directory.
@@ -342,7 +337,6 @@ The parameters are:
 * __BENCHMARK_BRANCH__: The Git branch of the benchmark suite. Use a custom branch name if you want to deploy from another branch. Otherwise use the official one (master).
 
 __Deployment__
----
 
 On Linux or OS X, considering the framework was cloned at "~/", execute these commands in a shell:
 
@@ -362,7 +356,6 @@ is running it will have to be online, otherwise the deployment process will be i
 and you'll probably have to start over from clean hosts.
 
 __Diagnostics__
----
 
 The deployment script will output progress messages. You can watch these messages in the 
 terminal, or redirect them to an output file (such as on the Linux example above) and watch 
