@@ -21,7 +21,7 @@ pages:
 # Development:
 - ['Development/index.md', 'Development']
 - ['Development/Contributing-Guide.md', 'Development', 'Contributing Guide']
-- ['Development/Getting-Started.md', 'Development', 'Getting Guide']
+- ['Development/Getting-Started.md', 'Development', 'Getting Started']
 - ['Development/Installation-Guide.md', 'Development', 'Installation Guide']
 - ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
 - ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
