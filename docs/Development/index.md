@@ -1,8 +1,13 @@
-The community has consistently helped in making these tests better, and we welcome any 
-and all changes. Reviewing our contribution practices and guidelines will help to keep
-us all on the same page. 
+If you'd like to verify a certain test works, update a test, or 
+add a new test/framework, you're in the right place. 
+However, see the [development section](Development) 
+if you're looking to run the benchmarks yourself.
 
-### Contents:
+The community has consistently helped in making these tests better, 
+and we welcome any and all changes. Reviewing our contribution 
+practices and guidelines will help to keep us all on the same page. 
+
+# Contents
 
 | Page | Summary |
 |:---- |:------- |
