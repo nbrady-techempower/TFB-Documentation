@@ -24,7 +24,6 @@ pages:
 - ['Development/Installation-Guide.md', 'Development', 'Installation Guide']
 - ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
 - ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
-- ['Development/Vagrant-Development-Environment.md']
 
 # Benchmarking:
 - ['Benchmarking/index.md', 'Benchmarking']

@@ -1,3 +1,5 @@
+# General Guidelines
+
 The community has consistently helped in making these tests better, and we welcome any 
 and all changes. These guidelines prevent us from having to give repeated feedback on 
 the same topics: 
@@ -29,3 +31,9 @@ on the Travis-CI verification, and you are strongly encouraged to use this. See
 the [deployment directory](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/deployment) for specifics
 
 ---
+
+# Github Pull Request Procedure
+
+# GitHub Issue Procedure
+
+

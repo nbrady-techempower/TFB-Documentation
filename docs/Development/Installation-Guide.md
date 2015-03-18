@@ -1,4 +1,4 @@
-If you're looking to quickly get started developing using the vagrant development environment, consider the [vagrant development environment guide](../Codebase/Vagrant-Development-Environment). 
+If you're looking to quickly get started developing using the vagrant development environment, consider the [vagrant development environment guide](#vagrant-development-environment). 
 
 Take a look at the [Summary of Script Directories section](../Codebase/Summary-of-Script-Directories.md) to figure out which directory has scripts relevant to your use case (development or benchmarking).
 
@@ -200,4 +200,21 @@ toolset/run-tests.py --install server --test php* --exclude php-fuel --verbose i
 # If running on a remote server, use `screen` or `tmux` or `nohup` to 
 # prevent the installation from being terminated if you are disconnected
 $ toolset/run-tests.py --install server --verbose --install-only
+```
+
+# Vagrant Development Environment
+
+The simplest way to begin development is to set up [vagrant](https://www.vagrantup.com/). 
+
+Here's a short example: 
+    
+```bash
+# Clone the project, then move into the right directory 
+$ cd ~/FrameworkBenchmarks/deployment/vagrant-development
+# Turn on the VM. Takes at least 20 minutes
+$ vagrant up
+# Enter the VM, then run a test
+$ vagrant ssh
+vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
+vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --install server --mode verify --test beego
 ```

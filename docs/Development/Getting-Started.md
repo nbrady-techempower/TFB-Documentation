@@ -5,10 +5,10 @@ This is the getting started guide for __development__. If you're interested in _
     * Clone your TFB repository to your local environment to get started.
 2. __Set up a development environment__  
     * Typically a TFB environment is set up by using a remote server dedicated to this project or by using a virtual machine. Because you're getting set up for development, you can use an environment with a single computer running the database, the load generation system, and the web framework. 
-    * Get started quickly and [set up your development environment with vagrant](../Development/Vagrant-Development-Environment.md), or
+    * Get started quickly and [set up your development environment with vagrant](../Development/Installation-Guide#vagrant-development-environment), or
     * [Click here for the guide to get your development environment set up.](Installation-Guide.md) *Note: We provide [scripts](../Codebase/Summary-of-Script-Directories.md) for configuring a Linux development environment using either Virtualbox or Amazon EC2, and are actively searching for help adding Windows.*
 3. __Enable Travis-CI__
-    * [Enable Travis-CI](Development/Travis-CI) on your project fork, so that any commits you send to Github are automatically verified for correctness (e.g. meeting all [benchmark requirements](../Project-Information/Framework-Tests.md#requirements)). 
+    * [Enable Travis-CI](Development/Testing-and-Debugging#travis-ci) on your project fork, so that any commits you send to Github are automatically verified for correctness (e.g. meeting all [benchmark requirements](../Project-Information/Framework-Tests.md#requirements)). 
 4. __Configure Your Environment__
     * Create a [benchmark.cfg file](../Codebase/Configuration-File.md), which is the benchmark.cfg.example with your specific configurations.
 5. __Run a Test__
