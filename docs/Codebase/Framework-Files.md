@@ -1,10 +1,15 @@
-There are a few files that are necessary to implement a framework into the Framework Benchmarks. All of these files will vary because they're all specific and unique to each framework. 
+There are a few files that are necessary to implement a framework into the 
+Framework Benchmarks. All of these files will vary because they're all 
+specific and unique to each framework. 
 
 | File | Summary |
 |:---- |:------- |
-[Install File](#install-file) | Installs the framework and all of the dependencies for the framework (if not already installed).
-[Setup File](#setup-file) | Configures the framework to the correct database hosts, package framework code, and starts the framework.
-[Benchmark Config File](#benchmark-config-file) | Defines test instructions and metadata for the framework benchmarks program.
+[Install File](#install-file) | Installs the framework and all of the dependencies 
+for the framework (if not already installed).
+[Setup File](#setup-file) | Configures the framework to the correct database hosts, 
+package framework code, and starts the framework.
+[Benchmark Config File](#benchmark-config-file) | Defines test instructions and 
+metadata for the framework benchmarks program.
 
 # Install File
 
@@ -71,19 +76,16 @@ lapis.sh  mongrel2.sh  nginx.sh  openresty.sh  resin.sh  weber.sh  zeromq.sh
 
 # Setup File
 
-The setup file is responsible for starting and stopping the test. This script is responsible for (among other things):
+The setup file is responsible for starting the test. This script is responsible for (among other things):
 
 * Modifying the framework's configuration to point to the correct database host
 * Compiling and/or packaging the code (if impossible to do in `install.sh`)
 * Starting the server
-* Stopping the server
 
-The setup file is a python script that contains a start() and a stop() function.  
-The start function should build the source, make any necessary changes to the framework's 
-configuration, and then start the server. The stop function should shutdown the server, 
-including all sub-processes as applicable.
+The setup file is a shell script that should build the source, make any necessary changes 
+to the framework's configuration, and then start the server.
 
-#### Configuring database connectivity in start()
+#### Configuring database connectivity
 
 By convention, the configuration files used by a framework should specify the database 
 server as `localhost` so that developing tests in a single-machine environment can be 
@@ -91,67 +93,35 @@ done in an ad hoc fashion, without using the benchmark scripts.
 
 When running a benchmark script, the script needs to modify each framework's configuration
 so that the framework connects to a database host provided as a command line argument. 
-In order to do this, use `setup_util.replace_text()` to make modifications prior to 
+In order to do this, use stream editor (`sed`) to make modifications prior to 
 starting the server.
 
-For example:
+For example (Java's Wicket Framework):
 
-```python
-setup_util.replace_text("wicket/src/main/webapp/WEB-INF/resin-web.xml", "mysql:\/\/.*:3306", "mysql://" + args.database_host + ":3306")
+```bash
+sed -i 's|mysql://.*:3306|mysql://'"${DBHOST}"':3306|g' src/main/webapp/WEB-INF/resin-web.xml
 ```
 
 Note: `args` contains a number of useful items, such as `troot`, `iroot`, `fwroot` (comparable
 to their bash counterparts in `install.sh`, `database_host`, `client_host`, and many others)
 
 Note: Using `localhost` in the raw configuration file is not a requirement as long as the
-`replace_text` call properly injects the database host provided to the benchmark 
-toolset as a command line argument.
+`sed` call properly injects the database host provided to the benchmark toolset as a command 
+line argument.
 
 #### A full example
 
 Here is an example of Wicket's setup file.
 
-```python
-import subprocess
-import sys
-import setup_util
+```bash
+#!/bin/bash
 
-##################################################
-# start(args, logfile, errfile)
-#
-# Starts the server for Wicket
-# returns 0 if everything completes, 1 otherwise
-##################################################
-def start(args, logfile, errfile):
+sed -i 's|mysql://.*:3306|mysql://'"${DBHOST}"':3306|g' src/main/webapp/WEB-INF/resin-web.xml
 
-# setting the database url
-setup_util.replace_text(args.troot + "/src/main/webapp/WEB-INF/resin-web.xml", "mysql:\/\/.*:3306", "mysql://" + args.database_host + ":3306")
-
-# 1. Compile and package
-# 2. Clean out possible old tests
-# 3. Copy package to Resin's webapp directory
-# 4. Start resin
-try:
-  subprocess.check_call("mvn clean compile war:war", shell=True, cwd="wicket", stderr=errfile, stdout=logfile)
-  subprocess.check_call("rm -rf $RESIN_HOME/webapps/*", shell=True, stderr=errfile, stdout=logfile)
-  subprocess.check_call("cp $TROOT/target/hellowicket-1.0-SNAPSHOT.war $RESIN_HOME/webapps/wicket.war", shell=True, stderr=errfile, stdout=logfile)
-  subprocess.check_call("$RESIN_HOME/bin/resinctl start", shell=True, stderr=errfile, stdout=logfile)
-  return 0
-except subprocess.CalledProcessError:
-  return 1
-
-##################################################
-# stop(logfile, errfile)
-#
-# Stops the server for Wicket
-# returns 0 if everything completes, 1 otherwise
-##################################################
-def stop(logfile):
-try:
-  subprocess.check_call("$RESIN_HOME/bin/resinctl shutdown", shell=True, stderr=errfile, stdout=logfile)
-  return 0
-except subprocess.CalledProcessError:
-  return 1
+mvn clean compile war:war
+rm -rf $RESIN_HOME/webapps/*
+cp target/hellowicket-1.0-SNAPSHOT.war $RESIN_HOME/webapps/wicket.war
+$RESIN_HOME/bin/resinctl start
 ```
 # Benchmark Config File
 
@@ -229,4 +199,4 @@ Here is an example `benchmark_config` from the `Compojure` framework. There are 
   * `display_name (metadata):` How to render this test permutation's name on the results web site.  Some permutation names can be really long, so the display_name is provided in order to provide something more succinct.
   * `versus (optional):` The name of another test (elsewhere in this project) that is a subset of this framework.  This allows for the generation of the framework efficiency chart in the results web site. For example, Compojure is compared to "servlet" since Compojure is built on the Servlets platform.
 
-The [requirements section](../Project-Information/Framework-Tests.md#requirements) explains the expected response for each URL as well all metadata options available. 
+The [requirements section](../Project-Information/Framework-Tests#requirements) explains the expected response for each URL as well all metadata options available. 
