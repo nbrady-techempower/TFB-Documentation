@@ -4,12 +4,9 @@ specific and unique to each framework.
 
 | File | Summary |
 |:---- |:------- |
-[Install File](#install-file) | Installs the framework and all of the dependencies 
-for the framework (if not already installed).
-[Setup File](#setup-file) | Configures the framework to the correct database hosts, 
-package framework code, and starts the framework.
-[Benchmark Config File](#benchmark-config-file) | Defines test instructions and 
-metadata for the framework benchmarks program.
+[Install File](#install-file) | Installs the framework and all of the dependencies for the framework (if not already installed).
+[Setup File](#setup-file) | Configures the framework to the correct database hosts, package framework code, and starts the framework.
+[Benchmark Config File](#benchmark-config-file) | Defines test instructions and metadata for the framework benchmarks program.
 
 # Install File
 
