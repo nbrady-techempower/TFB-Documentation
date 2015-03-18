@@ -47,27 +47,23 @@ The following requirements apply to all test types below.
 
     ###Example request
 
-    <pre><code>
-    GET /json HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5
-    Connection: keep-alive
-    </code></pre>
+        GET /json HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
 
     ###Example response
 
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Type: application/json; charset=UTF-8
-    Content-Length: 28
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
-
-    {"message":"Hello, World!"}
-    </code></pre>
+        HTTP/1.1 200 OK
+        Content-Type: application/json; charset=UTF-8
+        Content-Length: 28
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
+        
+        {"message":"Hello, World!"}
 
 2. ##Single Database Query
 
@@ -98,27 +94,23 @@ The following requirements apply to all test types below.
 
     ###Example request
     
-    <pre><code>
-    GET /db HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5
-    Connection: keep-alive
-    </code></pre>
+        GET /db HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
 
     ###Example response
 
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Length: 32
-    Content-Type: application/json; charset=UTF-8
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
-    
-    {"id":3217,"randomNumber":2149}
-    </code></pre>
+        HTTP/1.1 200 OK
+        Content-Length: 32
+        Content-Type: application/json; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
+        
+        {"id":3217,"randomNumber":2149}
 
 3. ##Multiple Database Queries 
 
@@ -150,27 +142,23 @@ The following requirements apply to all test types below.
 
     ###Example request
 
-    <pre><code>
-    GET /queries?queries=10 HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5
-    Connection: keep-alive
-    </code></pre>
+        GET /queries?queries=10 HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
 
     ###Example response
 
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Length: 315
-    Content-Type: application/json; charset=UTF-8
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
-    
-    [{"id":4174,"randomNumber":331},{"id":51,"randomNumber":6544},{"id":4462,"randomNumber":952},{"id":2221,"randomNumber":532},{"id":9276,"randomNumber":3097},{"id":3056,"randomNumber":7293},{"id":6964,"randomNumber":620},{"id":675,"randomNumber":6601},{"id":8414,"randomNumber":6569},{"id":2753,"randomNumber":4065}]
-    </code></pre>
+        HTTP/1.1 200 OK
+        Content-Length: 315
+        Content-Type: application/json; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
+        
+        [{"id":4174,"randomNumber":331},{"id":51,"randomNumber":6544},{"id":4462,"randomNumber":952},{"id":2221,"randomNumber":532},{"id":9276,"randomNumber":3097},{"id":3056,"randomNumber":7293},{"id":6964,"randomNumber":620},{"id":675,"randomNumber":6601},{"id":8414,"randomNumber":6569},{"id":2753,"randomNumber":4065}]
 
 4. ##Fortunes
 
@@ -210,47 +198,40 @@ The following requirements apply to all test types below.
 
     ###Example request
 
-    <pre><code>
-    GET /fortunes HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5    
-    Connection: keep-alive
-    </code></pre>
+        GET /fortunes HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5    
+        Connection: keep-alive
 
     ###Example response
 
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Length: 1196
-    Content-Type: text/html; charset=UTF-8
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
+        HTTP/1.1 200 OK
+        Content-Length: 1196
+        Content-Type: text/html; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
 
-    &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Fortunes&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;message&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;&amp;lt;script&amp;gt;alert(&amp;quot;This should not be displayed in a browser alert box.&amp;quot;);&amp;lt;/script&amp;gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;A computer program does what you tell it to do, not what you want it to do.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;A computer scientist is someone who fixes things that aren&amp;apos;t broken.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;A list is only as strong as its weakest link. — Donald Knuth&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;Additional fortune added at request time.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;After enough decimal places, nobody gives a damn.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Any program that runs right is obsolete.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;Computers make very fast, very accurate mistakes.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;Feature: A bug with seniority.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;
-    fortune: No such file or directory&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;フレームワークのベンチマーク&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;
-    </code></pre>
+        <!DOCTYPE html><html><head><title>Fortunes</title></head><body><table><tr><th>id</th><th>message</th></tr><tr><td>11</td><td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td></tr><tr><td>4</td><td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td></tr><tr><td>5</td><td>A computer program does what you tell it to do, not what you want it to do.</td></tr><tr><td>2</td><td>A computer scientist is someone who fixes things that aren&apos;t broken.</td></tr><tr><td>8</td><td>A list is only as strong as its weakest link. — Donald Knuth</td></tr><tr><td>0</td><td>Additional fortune added at request time.</td></tr><tr><td>3</td><td>After enough decimal places, nobody gives a damn.</td></tr><tr><td>7</td><td>Any program that runs right is obsolete.</td></tr><tr><td>10</td><td>Computers make very fast, very accurate mistakes.</td></tr><tr><td>6</td><td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td></tr><tr><td>9</td><td>Feature: A bug with seniority.</td></tr><tr><td>1</td><td>fortune: No such file or directory</td></tr><tr><td>12</td><td>フレームワークのベンチマーク</td></tr></table></body></html>
 
     ###Minimum template
 
     Along with the example response above, the following [Mustache](http://mustache.github.io/) template illustrates the minimum requirements for the server-side template. White-space can be optionally eliminated.
 
-    <pre><code>
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;&lt;title&gt;Fortunes&lt;/title&gt;&lt;/head&gt;
-    &lt;body&gt;
-    &lt;table&gt;
-    &lt;tr&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;message&lt;/th&gt;&lt;/tr&gt;
-    {{#.}}
-    &lt;tr&gt;&lt;td&gt;{{id}}&lt;/td&gt;&lt;td&gt;{{message}}&lt;/td&gt;&lt;/tr&gt;
-    {{/.}}
-    &lt;/table&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    </code></pre>
+        !<!DOCTYPE html>
+        <html>
+        <head><title>Fortunes</title></head>
+        <body>
+        <table>
+        <tr><th>id</th><th>message</th></tr>
+        {{#.}}
+        <tr><td>{{id}}</td><td>{{message}}</td></tr>
+        {{/.}}
+        </table>
+        </body>
+        </html>
 
 5. ##Database Updates
 
@@ -287,27 +268,23 @@ The following requirements apply to all test types below.
 
     ###Example request
 
-    <pre><code>
-    GET /updates?queries=10 HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5
-    Connection: keep-alive
-    </code></pre>
+        GET /updates?queries=10 HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
 
     ###Example response
 
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Length: 315
-    Content-Type: application/json; charset=UTF-8
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
+        HTTP/1.1 200 OK
+        Content-Length: 315
+        Content-Type: application/json; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
 
-    [{"id":4174,"randomNumber":331},{"id":51,"randomNumber":6544},{"id":4462,"randomNumber":952},{"id":2221,"randomNumber":532},{"id":9276,"randomNumber":3097},{"id":3056,"randomNumber":7293},{"id":6964,"randomNumber":620},{"id":675,"randomNumber":6601},{"id":8414,"randomNumber":6569},{"id":2753,"randomNumber":4065}]
-    </code></pre>
+        [{"id":4174,"randomNumber":331},{"id":51,"randomNumber":6544},{"id":4462,"randomNumber":952},{"id":2221,"randomNumber":532},{"id":9276,"randomNumber":3097},{"id":3056,"randomNumber":7293},{"id":6964,"randomNumber":620},{"id":675,"randomNumber":6601},{"id":8414,"randomNumber":6569},{"id":2753,"randomNumber":4065}]
 
 6. ## Plaintext
 
@@ -332,25 +309,20 @@ The following requirements apply to all test types below.
 
     ###Example request
 
-    <pre><code>
-    GET /plaintext HTTP/1.1
-    Host: server
-    User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
-    Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-US,en;q=0.5
-    Connection: keep-alive
-    </code></pre>
+        GET /plaintext HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
 
     ###Example response
 
-
-    <pre><code>
-    HTTP/1.1 200 OK
-    Content-Length: 15
-    Content-Type: text/plain; charset=UTF-8
-    Server: Example
-    Date: Wed, 17 Apr 2013 12:00:00 GMT
-    
-    Hello, World!
-    </code></pre>
+        HTTP/1.1 200 OK
+        Content-Length: 15
+        Content-Type: text/plain; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
+        
+        Hello, World!
