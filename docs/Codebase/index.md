@@ -10,7 +10,9 @@ Here are the relevant pieces of TFB's file structure:
     * et cetera...
 * [frameworks/](#frameworks)
     * Java/
+        * [README.md](#language-readmemd)
         * dropwizard/
+            * [README.md](#framework-readmemd)
             * [benchmark_config (Framework Specific File)](#framework-specific-files)
             * [install.sh (Framework Specific File)](#framework-specific-files)
             * [setup.sh (Framework Specific File)](#framework-specific-files)
@@ -58,6 +60,24 @@ similar.
 
 For information on each language, there are individual READMEs within 
 their respective directory. 
+
+#### Language README.md
+
+Because the information for each language varies so much, each language 
+should have its own README. This should include information like which 
+software versions are used, special instructions for adding a new 
+framework in that language, and places where you can get help specific 
+to that language. See the [Language README Formatting Guide](Development/Readme-Formats#language-readmes) 
+for a more detailed guide.
+
+#### Framework README.md
+
+Because the information for each framework varies so much, each framework 
+should have its own README. This should include information like which 
+software versions are used, special instructions for adding a new 
+variation in that framework, and places where you can get help specific 
+to that framework. See the [Framework README Formatting Guide](Development/Readme-Formats#framework-readmes) 
+for a more detailed guide.
 
 #### Framework Specific Files
 

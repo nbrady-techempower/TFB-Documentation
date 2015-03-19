@@ -26,6 +26,7 @@ pages:
 - ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
 - ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
 - ['Development/Add-Benchmark-Scripts.md', 'Development', 'Add Benchmark Scripts']
+- ['Development/Readme-Formats.md', 'Development', 'Readme Formats']
 
 # Benchmarking:
 - ['Benchmarking/index.md', 'Benchmarking']
