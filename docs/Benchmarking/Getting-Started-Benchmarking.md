@@ -1,6 +1,6 @@
 This is the getting started guide for __benchmarking__. 
 If you're interested in __development__ please visit the 
-[getting started guide for development](../Development/Getting-Started.md).
+[getting started guide for development](Development/Getting-Started.md).
 
 You will need three computers (or virtual machines) networked 
 together to fill the three benchmark roles of database server, 
@@ -14,7 +14,7 @@ SQL server, there are some limited helper scripts available at
 the moment. We welcome any pull requests along these lines. 
 While you can always use *manual deployment*, automated scripts 
 exist for many scenarios. Take a look at the 
-[Summary of Script Directories section](../Codebase/Summary-of-Script-Directories.md) 
+[Summary of Script Directories section](Codebase/Summary-of-Script-Directories.md) 
 to figure out which directory has scripts relevant to your use case. 
 
 *Please note: Running this software will make many modifications 
