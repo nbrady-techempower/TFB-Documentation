@@ -21,6 +21,8 @@ Here are the relevant pieces of TFB's file structure:
     * et cetera...
 * [toolset/](#toolset)
     * [benchmark/](#benchmark)
+        * benchmarker.py
+        * framework_test.py
     * [setup/](#setup)
         * linux/
             * [frameworks/ (Installation Scripts Directories)](#installation-script-directories)
