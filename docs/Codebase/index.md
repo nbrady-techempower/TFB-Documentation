@@ -23,10 +23,10 @@ Here are the relevant pieces of TFB's file structure:
     * [benchmark/](#benchmark)
     * [setup/](#setup)
         * linux/
-            * [frameworks/](Installation Scripts Directories)[#installation-script-directories]
-            * [languages/](Installation Scripts Directories)[#installation-script-directories]
-            * [systools/](Installation Scripts Directories)[#installation-script-directories]
-            * [webservers/](Installation Scripts Directories)[#installation-script-directories]
+            * [frameworks/ (Installation Scripts Directories)](#installation-script-directories)
+            * [languages/ (Installation Scripts Directories)](#installation-script-directories)
+            * [systools/ (Installation Scripts Directories)](#installation-script-directories)
+            * [webservers/ (Installation Scripts Directories)](#installation-script-directories)
             * [installer.py](#installerpy)
         * sqlserver/
         * windows/
