@@ -8,6 +8,15 @@ specific and unique to each framework.
 [Setup File](#setup-file) | Configures the framework to the correct database hosts, package framework code, and starts the framework.
 [Benchmark Config File](#benchmark-config-file) | Defines test instructions and metadata for the framework benchmarks program.
 
+# Available Bash Variables 
+
+Because they're bash scripts, both install.sh and setup.sh have 
+these bash variables available to them.
+
+* FWROOT: Root of project
+* IROOT: Root of installation for the current framework
+* TROOT: Root directory for the current framework 
+
 # Install File
 
 The `install.sh` file for each framework starts the bash process which will 

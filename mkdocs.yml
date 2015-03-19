@@ -25,6 +25,7 @@ pages:
 - ['Development/Installation-Guide.md', 'Development', 'Installation Guide']
 - ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
 - ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
+- ['Development/Add-Benchmark-Scripts.md', 'Development', 'Add Benchmark Scripts']
 
 # Benchmarking:
 - ['Benchmarking/index.md', 'Benchmarking']
@@ -36,6 +37,7 @@ pages:
 - ['Codebase/Configuration-File.md', 'Codebase', 'Configuration File']
 - ['Codebase/Framework-Files.md', 'Codebase', 'Framework Specific Files']
 - ['Codebase/Summary-of-Script-Directories.md', 'Codebase', 'Summary of Script Directories']
+- ['Codebase/Setup-Files.md', 'Codebase', 'Setup Files']
 
 # About:
 - ['About/Framework-Benchmarks.md', 'About', 'Framework Benchmarks']
