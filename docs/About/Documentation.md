@@ -29,8 +29,7 @@ to preview your changes
     * Run `mkdocs serve` in your command line. If there is an error
     building the docs locally, the error will be displayed within your 
     command line.
-    * Double check your changes at 127.0.0.1:8000 (theme served up by 
-    mkdocs locally is different than the theme that readthedocs provides).
+    * Double check your changes at 127.0.0.1:8000.
 5. Submit a pull request to master at 
 [TechEmpower/TFB-Documentation](https://github.com/TechEmpower/TFB-Documentation).
 6. Once your pull request is accepted, the site 
