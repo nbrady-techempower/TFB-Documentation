@@ -1,14 +1,14 @@
 The __TechEmpower Framework Benchmarks Documentation__ 
 is under constant development. If something is missing 
-or you see an error, either submit an issue or a pull 
-request on the 
-[repository for TFB Documentation](https://github.com/TechEmpower/TFB-Documentation).
+or you see an error, submit an issue or pull 
+request 
+[here](https://github.com/TechEmpower/TFB-Documentation).
 
-We're using [readthedocs.org](https://readthedocs.org/) 
-to automatically build and display our documentation when 
-anything is committed to our master branch. Because we're 
-using markdown. We are also using 
-[mkdocs for readthedocs](http://mkdocs.readthedocs.org/en/latest/).
+Documentation is written using [markdown syntax](https://help.github.com/articles/markdown-basics/) 
+and can be previewed locally using [mkdocs](http://mkdocs.readthedocs.org/en/latest/). 
+We use [readthedocs.org](https://readthedocs.org/) to automatically build 
+and display documentation when anything is committed to our master branch. 
+
 So, you're able to see if the docs will properly build locally 
 before submitting a pull request by running `mkdocs serve`. 
 You can also see the error within your command line if the docs 
@@ -24,9 +24,8 @@ an issue or pull request.
 1. Fork the [documentation repository](https://github.com/TechEmpower/TFB-Documentation).
 2. Clone the new fork.
 3. Make additions or updates to the documentation.
-4. (optional - need to have 
-[mkdocs installed for readthedocs](http://docs.readthedocs.org/en/latest/getting_started.html#in-markdown)) 
-Ensure docs build correctly with mkdocs.
+4. Optional - Use [mkdocs](http://docs.readthedocs.org/en/latest/getting_started.html#in-markdown) 
+to preview your changes
     * Run `mkdocs serve` in your command line. If there is an error
     building the docs locally, the error will be displayed within your 
     command line.
@@ -37,3 +36,10 @@ Ensure docs build correctly with mkdocs.
 6. Once your pull request is accepted, the site 
 [frameworkbenchmarks.rtfd.org](http://frameworkbenchmarks.readthedocs.org/en/latest/) 
 will automatically be updated.
+
+# Quick-Start with mkdocs
+
+* Clone our repository
+* Run `virtualenv env` to create a new virtualenv
+* Run `pip install -r requirements.txt` to install mkdocs
+* Run `mkdocs serve` to preview your changes
