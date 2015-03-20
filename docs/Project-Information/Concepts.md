@@ -27,6 +27,7 @@ many directories, we are working to consolidate related code into fewer director
 with more tests per directory. 
 
 When run, `TFB` will: 
+
 * select which framework tests are to be run based on command-line arguments you provide
 * install the necessary software (both on the `app server` and other servers)
 * launch the framework
