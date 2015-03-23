@@ -3,7 +3,7 @@
 # Installer File
 
 `installer.py` calls into the shell to perform all installation steps. 
-It installs three different sets of software, the server software we 
+It installs three different sets of software: the server software we 
 want to test, the database that we want to use with the server software, 
 and the client software that we want to use to generate load for the server.
 
