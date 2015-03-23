@@ -35,14 +35,14 @@ for specifics.
 
 * Use a branch in your [forked repository](https://help.github.com/articles/fork-a-repo/) 
 to make changes and submit a pull request.
-* Update approrpiate READMEs to match changes. Languages and frameworks have READMEs
+* Update appropriate READMEs to match changes. Languages and frameworks have READMEs
 that are specific to them. If something has been updated that would not match the 
 README, please udpate it accordingly prior to submitting the pull request.
 * (optional) Squash your commits into a clean, single commit. 
 * Fetch and [rebase](https://help.github.com/articles/about-git-rebase/) off of TFB's master prior to 
-opening the pull request to ensure that your branch has the the latest updates and a clean 
+opening the pull request to ensure that your branch has the latest updates and a clean 
 history.
-* If you're PR is fixing an issue, 
+* If your PR is fixing an issue, 
 [tag it in the PR body](https://github.com/blog/1506-closing-issues-via-pull-requests) 
 if you haven't done so in a commit. Just include the 
 [special keyword syntax](https://help.github.com/articles/closing-issues-via-commit-messages/), 
