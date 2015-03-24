@@ -39,6 +39,8 @@ $ toolset/run-tests.py --test beego --max-concurrency 24 --max-threads 24 --dura
 # Run a tiny benchmark
 $ toolset/run-tests.py --test beego --max-threads 2 --max-concurrency 2 
 ```
+_Note: The `results` directory must be removed after each test has been run 
+in order to run the test again._
 
 # Testing on both Windows and Linux
 
