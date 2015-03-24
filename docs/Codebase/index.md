@@ -16,6 +16,7 @@ Here are the relevant pieces of TFB's file structure:
             * [benchmark_config (Framework Specific File)](#framework-specific-files)
             * [install.sh (Framework Specific File)](#framework-specific-files)
             * [setup.sh (Framework Specific File)](#framework-specific-files)
+            * [source_code](#source-code-file)
             * et cetera...
         * gemini/
         * et cetera...
@@ -91,6 +92,32 @@ files that are required by the TFB suite. These are:
 
 See the section on [Framework Specific Files](Codebase/Framework-Files) 
 for more information.
+
+#### Source Code File
+
+The file named `source_code` within each framework is used to count the lines 
+of code in the project - each file listed in source_code has its lines counted 
+(we're using [CLOC](http://cloc.sourceforge.net/) to provide this functionality)
+and the result are include in `results.json` under the rawData > slocCounts 
+keys, as shown here:
+
+    "rawData": {
+      "slocCounts": {
+        "mojolicious": 72, 
+        "scruffy": 47, 
+        "nodejs": 217, 
+        "spring": 242, 
+        "cpoll-cppsp": 82, 
+        "slim": 1889, 
+        "dropwizard": 293, 
+        "revel": 258, 
+        "dancer": 32, 
+
+TFB does not use the numbers in any of the graphs but we include them for 
+other consumers of the data.
+
+_Note: The keys used are framework names (e.g. ringo) and not he framework 
+test names (e.g. ringojs-raw)._
 
 ### toolset/
 
