@@ -116,7 +116,7 @@ keys, as shown here:
 TFB does not use the numbers in any of the graphs but we include them for 
 other consumers of the data.
 
-_Note: The keys used are framework names (e.g. ringo) and not he framework 
+_Note: The keys used are framework names (e.g. ringo) and not the framework 
 test names (e.g. ringojs-raw)._
 
 ### toolset/
