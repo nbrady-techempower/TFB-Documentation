@@ -218,3 +218,23 @@ $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
 vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --install server --mode verify --test beego
 ```
+
+## Vagrant Snapshots
+
+After you initially setup the virtual machine using `vagrant up`, it is often smart to create a snapshot
+of the VM state at that point. This allows you to easily reset the VM to a clean state without
+having to destroy and recreate it. There are multiple vagrant plugins to enable snapshotting. 
+Here is one options: 
+
+```bash
+# Create the VM
+$ vagrant up
+# Before doing anything else, install the snapshot plugin
+$ vagrant plugin install vagrant-vbox-snapshot
+# Now take the initial snapshot (vm name is default)
+$ vagrant snapshot take default initial
+Taking snapshot initial
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+# Use VM as normal
+$ vagrant ssh
+```
