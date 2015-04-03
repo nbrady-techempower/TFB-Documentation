@@ -2,28 +2,26 @@
 
 ![TechEmpower Logo](img/te-logo-black-200.png)
 
-[__TechEmpower Framework Benchmarks__](http://www.techempower.com/benchmarks/) 
-is an open source, performance comparison of many web application frameworks 
+The [__TechEmpower Framework Benchmarks__](http://www.techempower.com/benchmarks/) 
+is an open source performance comparison of many web application frameworks 
 executing fundamental tasks such as JSON serialization, database access, and 
 server-side template composition.
 
-Please see the corresponding document for more information about 
-[TechEmpower](About/TechEmpower), the [Framework Benchmarks](About/Framework-Benchmarks), 
-or the [Documentation](About/Documentation).
+For background information, see the documents linked herein about 
+[TechEmpower](About/TechEmpower), the [Framework Benchmarks Project](About/Framework-Benchmarks), 
+or this [Documentation itself](About/Documentation).
 
-The main documentation for the site is organized into a few sections. Visit 
-each section to get more details related to that area, a more detailed overview 
-of what's in each section, and where to find information that isn't listed. 
+This documentation is organized into a few sections. Within each section we
+provide an overview and links to further detail. 
 
-Here are the major sections in the documentation:
+The major sections of the documentation are:
 
 | Section | Summary |
 |:------- |:------- |
 [Project Information](Project-Information/)| General information regarding the project terminology, concepts, and project scope. 
 [Development](Development/)                | Guides and documents that assist with getting set up for development, adding a test or framework, and adding features to the benchmark suite. 
-[Benchmarking](Benchmarking/)              | Assistance getting set up to run the benchmark, and running the benchmarks yourself. 
-[Support](Support/)                        | Get more help by getting in touch with the community, and look over the FAQs. 
+[Benchmarking](Benchmarking/)              | Assistance getting set up to run the benchmark and running the benchmarks yourself. 
+[Support](Support/)                        | Get more help via FAQs or by getting in touch with the community. 
 
-_Note: There are READMEs that exists outside of this documentation. They're 
-located within specific language, framework, and 
+_Note: There are READMEs pertaining to specific test implementations that exist outside of this documentation. Each of those READMEs is located within the main project's directory structure, such as within the directories for specific languages, frameworks, and 
 [deployment script](Codebase/Summary-of-Script-Directories) directories._
