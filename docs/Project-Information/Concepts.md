@@ -12,13 +12,15 @@
 |preview|A capture of data from a run used by project participants to sanity-check prior to an official round.|
 |round|A posting of "official" results on this web site. This is mostly for ease of consumption by readers and good-spirited & healthy competitive bragging rights. For in-depth analysis, we encourage you to examine the source code and run the tests on your own hardware.|
 
-#Servers
+#Server Roles
 
-The full benchmark requires at least three computers:
+When running the benchmark suite, we use three server roles.  These roles can be fulfilled by three distinct computers (physical hardware), three virtual machines, by a single computer acting in all three roles simultaneously, or any other blend.
 
-* `app server`: The computer that your framework will be launched on.
-* `load server`: The computer that will generate client load. Also known as the `client machine`.
-* `database server`: The computer that runs all the databases. Also known as the `DB server`.
+The full benchmark requires at least three server roles:
+
+* `app server`: The server that hosts each framework during a run, inclusive of web servers where applicable.
+* `load server`: The server that generates client load during a run. Also known as the `client` or `client machine`.
+* `database server`: The server that runs the databases used during a run. Also known as the `DB server`.
 
 This codebase (`TechEmpower/FrameworkBenchmarks` aka `TFB`) must be run on 
 the `app server`. The codebase contains a number of `framework directories`, each 
@@ -30,8 +32,9 @@ When run, `TFB` will:
 
 * select which framework tests are to be run based on command-line arguments you provide
 * install the necessary software (both on the `app server` and other servers)
-* launch the framework
-* access the urls listed in [the requirements](http://www.techempower.com/benchmarks/#section=code) and verify the responses
+* launch the framework(s) you've requested, each in turn
+* launch the necessary database servers
+* access the URIs listed in [the requirements](http://www.techempower.com/benchmarks/#section=code) and verify the responses
 * launch the load generation software on the `load server`
 * gather the results
-* halt the framework
+* halt the framework, and repeat for the next framework as specified by command-line arguments
