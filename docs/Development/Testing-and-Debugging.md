@@ -54,7 +54,7 @@ tests, and therefore you should verify your code manually.
 The steps involved are:
 
 * Assuming you have implemented the Linux test already, add a new test 
-permutation to your `benchmark_config` file for the Windows test.  When 
+permutation to your `benchmark_config.json` file for the Windows test.  When 
 the benchmark script runs on Linux, it skips tests where `os` in 
 `Windows` and vice versa.
 * Add the necessary tweaks to your 
