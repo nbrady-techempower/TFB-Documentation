@@ -131,9 +131,9 @@ $RESIN_HOME/bin/resinctl start
 ```
 # Benchmark Config File
 
-The `benchmark_config` file is used by our scripts to identify available tests - it should exist at the root of the framework directory.
+The `benchmark_config.json` file is used by our scripts to identify available tests - it should exist at the root of the framework directory.
 
-Here is an example `benchmark_config` from the `Compojure` framework. There are two different tests listed for the `Compojure` framework.
+Here is an example `benchmark_config.json` from the `Compojure` framework. There are two different tests listed for the `Compojure` framework.
 
     {
       "framework": "compojure",
