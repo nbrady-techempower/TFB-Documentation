@@ -3,7 +3,7 @@ these steps:
 
 * Add/Update an [install.sh file](Codebase/Framework-Files#install-file).
 * Add/Update a [setup file](Codebase/Framework-Files#setup-file).
-* Add/Update a [benchmark_config](Codebase/Framework-Files#benchmark-config-file).
+* Add/Update a [benchmark_config.json](Codebase/Framework-Files#benchmark-config-file).
 * Implement at least one [test](Project-Information/Framework-Tests#test-types) 
 (we'd be even happier with six completed tests). When creating a database test, 
 use the table/collection `hello_world`. Our database setup scripts are stored 
