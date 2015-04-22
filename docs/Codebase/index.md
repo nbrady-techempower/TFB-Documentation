@@ -13,7 +13,7 @@ Here are the relevant pieces of TFB's file structure:
         * [README.md](#language-readmemd)
         * dropwizard/
             * [README.md](#framework-readmemd)
-            * [benchmark_config (Framework Specific File)](#framework-specific-files)
+            * [benchmark_config.json (Framework Specific File)](#framework-specific-files)
             * [install.sh (Framework Specific File)](#framework-specific-files)
             * [setup.sh (Framework Specific File)](#framework-specific-files)
             * [source_code](#source-code-file)
@@ -86,7 +86,7 @@ Most of the files are framework specific and you can find more
 information within their individual READMEs. However, there are three 
 files that are required by the TFB suite. These are:
 
-* benchmark_config
+* benchmark_config.json
 * install.sh
 * setup.sh
 
