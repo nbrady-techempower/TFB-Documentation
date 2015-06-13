@@ -193,10 +193,10 @@ or call the other test with `toolset/run-tests.py --mode verify --test compojure
   * `fortune_url (optional):` the URI to the fortunes test, typically `/fortune`
   * `update_url (optional):` the URI to the updates test, setup in a manner similar to `query_url` described above.
   * `plaintext_url (optional):` the URI of the plaintext test, typically `/plaintext`
-  * `port:` The port the server is listening on
+  * `port (optional):` The port the server will be listening on, typically `8080`
   * `approach (metadata):` `Realistic` or `Stripped` (see [here](http://www.techempower.com/benchmarks/#section=code&hw=peak&test=json) for a description of all metadata attributes)
-  * `classification (metadata):` `Full`, `Micro`, or `Platform`
-  * `database (metadata):` `MySQL`, `Postgres`, `MongoDB`, `SQLServer`, or `None`
+  * `classification (metadata):` `Fullstack`, `Micro`, or `Platform`
+  * `database (metadata):` `MySQL`, `Postgres`, `MongoDB`, `Cassandra`, `Elasticsearch`, `Redis`, `SQLite`, `SQLServer`, or `None`
   * `framework (metadata):` name of the framework (only used to display information on the results site)
   * `language (metadata):` name of the language
   * `orm (metadata):` `Full`, `Micro`, or `Raw`
