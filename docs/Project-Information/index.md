@@ -5,8 +5,8 @@ The TechEmpower Framework Benchmarks project (TFB for short) is by its nature co
 
 | Page | Summary |
 |:---- |:------- |
-[Basics Concepts](Project-Information/Concepts) | The basic concepts surrounding TFB.
-[Framework Tests](Project-Information/Framework-Tests) | Test descriptions & requirements.
-[Environment](Project-Information/Environment) | Project environment details.
-[Travis-CI](Project-Information/Travis-CI) | Details related to TFB and Travis-CI.
-[Expected Questions](Project-Information/Expected-Questions) | Questions we're expecting to answer.
+[Basics Concepts](Concepts) | The basic concepts surrounding TFB.
+[Framework Tests](Framework-Tests) | Test descriptions & requirements.
+[Environment](Environment) | Project environment details.
+[Travis-CI](Travis-CI) | Details related to TFB and Travis-CI.
+[Expected Questions](Expected-Questions) | Questions we're expecting to answer.

@@ -58,9 +58,9 @@ permutation to your `benchmark_config.json` file for the Windows test.  When
 the benchmark script runs on Linux, it skips tests where `os` in 
 `Windows` and vice versa.
 * Add the necessary tweaks to your 
-[setup file](Codebase/Framework-Files#setup-file) to start and stop on 
+[setup file](../Codebase/Framework-Files#setup-file) to start and stop on 
 the new operating system.  See, for example, 
-[the script for Go](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks/Go/go/setup.sh).
+[the script for Go](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks/Go/go-raw/setup.sh).
 * Test on Windows and Linux to make sure everything works as expected.
 
 # Travis-CI
@@ -69,7 +69,7 @@ as simple as going to travis-ci.org, using the `Log in with Github`
 button, and enabling Travis-CI for your fork. When your development is 
 done and your changes pass the Travis-CI verification, submit a pull 
 request with confidence that it can be merged quickly. 
-[Read more about TFB and Travis-CI](Project-Information/Travis-CI).
+[Read more about TFB and Travis-CI](../Project-Information/Travis-CI).
 
 # Debugging
 

@@ -49,7 +49,7 @@ Information for deploying the benchmark on a range of cloud or
 self-hosted environments. While you can always use manual deployment, 
 automated scripts exist for many scenarios. Explinations of the 
 subdirectories are within 
-[Summary of Script Directories section](Codebase/Summary-of-Script-Directories).
+[Summary of Script Directories section](Summary-of-Script-Directories).
 
 ### frameworks/
 
@@ -68,7 +68,7 @@ Because the information for each language varies so much, each language
 should have its own README. This should include information like which 
 software versions are used, special instructions for adding a new 
 framework in that language, and places where you can get help specific 
-to that language. See the [Language README Formatting Guide](Development/Readme-Formats#language-readmes) 
+to that language. See the [Language README Formatting Guide](../Development/Readme-Formats#language-readmes) 
 for a more detailed guide.
 
 #### Framework README.md
@@ -77,7 +77,7 @@ Because the information for each framework varies so much, each framework
 should have its own README. This should include information like which 
 software versions are used, special instructions for adding a new 
 variation in that framework, and places where you can get help specific 
-to that framework. See the [Framework README Formatting Guide](Development/Readme-Formats#framework-readmes) 
+to that framework. See the [Framework README Formatting Guide](../Development/Readme-Formats#framework-readmes) 
 for a more detailed guide.
 
 #### Framework Specific Files
@@ -90,7 +90,7 @@ files that are required by the TFB suite. These are:
 * install.sh
 * setup.sh
 
-See the section on [Framework Specific Files](Codebase/Framework-Files) 
+See the section on [Framework Specific Files](Framework-Files) 
 for more information.
 
 #### Source Code File
@@ -132,7 +132,7 @@ This directory contains files that implement or support the benchmark feature:
 * `framework_test.py`: Methods to run a framework's tests. Called by `benchmarker.py`.
 
 These files are not meant for you to run directly. For instructions on running the 
-benchmark, please refer to the [benchmarking section](Benchmarking).
+benchmark, please refer to the [benchmarking section](../Benchmarking).
 
 #### setup/
 
@@ -148,9 +148,9 @@ windows: Scripts to setup the Windows server.
 These directories help organize the installation scripts into four 
 cagegories (frameworks, languages, systools, and webservers), 
 which are called by [`installer.py`](#installerpy) when tests are run. 
-Visit the [installation script section](Development/Add-Benchmark-Scripts#installation-scripts) 
+Visit the [installation script section](../Development/Add-Benchmark-Scripts#installation-scripts) 
 for guidelines on writing an installation script, or visit the 
-[installer file section](Codebase/SetupFiles#installer-file) for 
+[installer file section](Setup-Files#installer-file) for 
 more information on how the installer scripts are called.
 
 ##### installer.py
@@ -159,28 +159,28 @@ The `installer.py` file calls into the shell to perform all installation steps.
 It installs three different sets of software, the server software we want to 
 test, the database that we want to use with the server software, and the client 
 software that we want to use to generate load for the server. The 
-[installer file section](Codebase/SetupFiles#installer-file) gives 
+[installer file section](Setup-Files#installer-file) gives 
 an overview of how this installation process works.
 
 #### test/
 
-Script for [Travis-CI](Project-Information/Travis-CI).
+Script for [Travis-CI](../Project-Information/Travis-CI).
 
 ### .travis.yml
 
 Provides Travis-CI with the relevant information to test TFB. See the 
-[Travis-CI](Project-Information/Travis-CI) section for more information.
+[Travis-CI](../Project-Information/Travis-CI) section for more information.
 
 ### benchmark.cfg
 
 This file sets up user/environment specific information that TFB needs to 
 know in order to properly run framework tests. See the 
-[Configuration File section](Codebase/Configuration-File) for more information.
+[Configuration File section](Configuration-File) for more information.
 
 # Contents
 
 | Page | Summary |
 |:---- |:------- |
-[Configuration File](Codebase/Configuration-File) | Configures set up specifications specific to each user and system.
-[Framework Specific Files](Codebase/Framework-Files) | Files specific to each individual framework for use with the benchmarking suite.
-[Summary of Script Directories](Codebase/Summary-of-Script-Directories) | Guide to directories that assist with scripts for setting up different environments.
+[Configuration File](Configuration-File) | Configures set up specifications specific to each user and system.
+[Framework Specific Files](Framework-Files) | Files specific to each individual framework for use with the benchmarking suite.
+[Summary of Script Directories](Summary-of-Script-Directories) | Guide to directories that assist with scripts for setting up different environments.

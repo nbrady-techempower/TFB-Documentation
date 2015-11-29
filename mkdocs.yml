@@ -1,54 +1,46 @@
 site_name: TechEmpower Framework Benchmarks
-site_url: /
+site_url: http://frameworkbenchmarks.readthedocs.org/en/latest
 site_description: Documentation for TechEmpower Framework Benchmarks.
 site_favicon: img/favicon.png
 repo_url: https://github.com/TechEmpower/TFB-Documentation
+repo_name: TFB-Documentation
 theme: readthedocs
-pages: 
-- ['index.md']
 
-# **************************
-# **DROP DOWN MENU OPTIONS** 
-# **************************
-
-# Project Information:
-- ['Project-Information/index.md', 'Project Information']
-- ['Project-Information/Concepts.md', 'Project Information', 'Basic Concepts']
-- ['Project-Information/Framework-Tests.md', 'Project Information', 'Framework Tests']
-- ['Project-Information/Environment.md', 'Project Information', 'Environment']
-- ['Project-Information/Travis-CI.md', 'Project Information', 'Travis-CI']
-- ['Project-Information/Expected-Questions.md', 'Project Information', 'Expected Questions']
-- ['Project-Information/Results-Website.md', 'Project Information', 'Results Website']
-
-# Development:
-- ['Development/index.md', 'Development']
-- ['Development/Getting-Started.md', 'Development', 'Getting Started']
-- ['Development/Contributing-Guide.md', 'Development', 'Contributing Guide']
-- ['Development/Installation-Guide.md', 'Development', 'Installation Guide']
-- ['Development/Add-Frameworks-or-Tests.md', 'Development', 'Add Frameworks or Tests']
-- ['Development/Testing-and-Debugging.md', 'Development', 'Testing and Debugging']
-- ['Development/Add-Benchmark-Scripts.md', 'Development', 'Add Benchmark Scripts']
-- ['Development/Readme-Formats.md', 'Development', 'Readme Formats']
-
-# Benchmarking:
-- ['Benchmarking/index.md', 'Benchmarking']
-- ['Benchmarking/Getting-Started-Benchmarking.md', 'Benchmarking', 'Getting Started']
-- ['Benchmarking/Running-the-Benchmark.md', 'Benchmarking', 'Run the Benchmark']
-
-# Codebase
-- ['Codebase/index.md', 'Codebase']
-- ['Codebase/Configuration-File.md', 'Codebase', 'Configuration File']
-- ['Codebase/Framework-Files.md', 'Codebase', 'Framework Specific Files']
-- ['Codebase/Summary-of-Script-Directories.md', 'Codebase', 'Summary of Script Directories']
-- ['Codebase/Setup-Files.md', 'Codebase', 'Setup Files']
-
-# About:
-- ['About/Framework-Benchmarks.md', 'About', 'Framework Benchmarks']
-- ['About/TechEmpower.md', 'About', 'TechEmpower']
-- ['About/Documentation.md', 'About', 'Documentation']
-- ['About/License.md', 'About', 'License']
-
-# Support
-- ['Support/index.md', 'Support']
-- ['Support/Converse.md', 'Support', 'Join the Conversation']
-- ['Support/FAQ.md', 'Support', 'FAQ']
+pages:
+- Home: 'index.md'
+- Project Information:
+  - 'Project Information Overview': 'Project-Information/index.md'
+  - 'Basic Concepts' : 'Project-Information/Concepts.md'
+  - 'Framework Tests' : 'Project-Information/Framework-Tests.md'
+  - 'Environment' : 'Project-Information/Environment.md'
+  - 'Travis-CI' : 'Project-Information/Travis-CI.md'
+  - 'Expected Questions' : 'Project-Information/Expected-Questions.md'
+  - 'Results Website' : 'Project-Information/Results-Website.md'
+- Development:
+  - 'Development Overview': 'Development/index.md'
+  - 'Getting Started': 'Development/Getting-Started.md'
+  - 'Contributing Guide': 'Development/Contributing-Guide.md'
+  - 'Installation Guide': 'Development/Installation-Guide.md'
+  - 'Add Framework or Tests': 'Development/Add-Frameworks-or-Tests.md'
+  - 'Testing and Debugging': 'Development/Testing-and-Debugging.md'
+  - 'Add Benchmark Scripts': 'Development/Add-Benchmark-Scripts.md'
+  - 'Readme Formats': 'Development/Readme-Formats.md'
+- Benchmarking:
+  - 'Benchmarking Overview': 'Benchmarking/index.md'
+  - 'Getting Started': 'Benchmarking/Getting-Started-Benchmarking.md'
+  - 'Run the Benchmark': 'Benchmarking/Running-the-Benchmark.md'
+- Codebase:
+  - 'Codebase Overview': 'Codebase/index.md'
+  - 'Configuration File': 'Codebase/Configuration-File.md'
+  - 'Framework Files': 'Codebase/Framework-Files.md'
+  - 'Summary of Script Directories': 'Codebase/Summary-of-Script-Directories.md'
+  - 'Setup Files': 'Codebase/Setup-Files.md'
+- About:
+  - 'Framework Benchmarks': 'About/Framework-Benchmarks.md'
+  - 'TechEmpower': 'About/TechEmpower.md'
+  - 'Documentation': 'About/Documentation.md'
+  - 'License': 'About/License.md'
+- Support:
+  - 'Support Overview': 'Support/index.md'
+  - 'Join the Conversation': 'Support/Converse.md'
+  - 'FAQ': 'Support/FAQ.md'

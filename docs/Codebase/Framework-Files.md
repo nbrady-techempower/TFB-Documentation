@@ -207,4 +207,4 @@ or call the other test with `toolset/run-tests.py --mode verify --test compojure
   * `display_name (metadata):` How to render this test permutation's name on the results web site.  Some permutation names can be really long, so the display_name is provided in order to provide something more succinct.
   * `versus (optional):` The name of another test (elsewhere in this project) that is a subset of this framework.  This allows for the generation of the framework efficiency chart in the results web site. For example, Compojure is compared to "servlet" since Compojure is built on the Servlets platform.
 
-The [requirements section](Project-Information/Framework-Tests#requirements) explains the expected response for each URL as well all metadata options available. 
+The [requirements section](../Project-Information/Framework-Tests#requirements) explains the expected response for each URL as well all metadata options available. 

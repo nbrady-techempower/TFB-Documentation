@@ -1,4 +1,4 @@
-![TechEmpower Logo](img/te-logo-blue-400.png)
+![TechEmpower Logo](../../img/te-logo-blue-400.png)
 
 ##What is TechEmpower?
 
