@@ -21,6 +21,7 @@ The major sections of the documentation are:
 [Project Information](Project-Information/)| General information regarding the project terminology, concepts, and project scope. 
 [Development](Development/)                | Guides and documents that assist with getting set up for development, adding a test or framework, and adding features to the benchmark suite. 
 [Benchmarking](Benchmarking/)              | Assistance getting set up to run the benchmark and running the benchmarks yourself. 
+[Codebase](Codebase/)                      | See how the framework benchmarks are structured and understand the purpose of the files.
 [Support](Support/)                        | Get more help via FAQs or by getting in touch with the community. 
 
 _Note: There are READMEs pertaining to specific test implementations that exist outside of this documentation. Each of those READMEs is located within the main project's directory structure, such as within the directories for specific languages, frameworks, and 

@@ -1,6 +1,6 @@
 If you're looking to quickly get started developing using the vagrant development environment, consider the [vagrant development environment guide](#vagrant-development-environment). 
 
-Take a look at the [Summary of Script Directories section](Codebase/Summary-of-Script-Directories) to figure out which directory has scripts relevant to your use case (development or benchmarking).
+Take a look at the [Summary of Script Directories section](../Codebase/Summary-of-Script-Directories) to figure out which directory has scripts relevant to your use case (development or benchmarking).
 
 #Installation Basics
 
@@ -157,7 +157,7 @@ We use the `--install-only` flag in our examples to
 prevent launching tests at this stage. All of these commands 
 should be run from the `app server` - it will SSH into other
 hosts as needed. For more information on how TFB installation 
-works, see [here](deployment). 
+works, see [here](../Benchmarking/Getting-Started-Benchmarking/#benchmark-suite-deployment).
 
 **Setting up the `load server`**
 

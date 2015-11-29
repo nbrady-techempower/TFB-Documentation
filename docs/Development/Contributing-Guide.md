@@ -28,7 +28,7 @@ ones inside specific framework directories.
 * __Use the Development Virtual Machine__: Our Vagrant scripts can setup a VM for you
 that looks nearly identical to our test environment. This is even better than relying
 on the Travis-CI verification, and you are strongly encouraged to use this. See 
-the [installation guide](Development/Installation-Guide#vagrant-development-environment) 
+the [installation guide](Installation-Guide#vagrant-development-environment) 
 for specifics.
 
 # Github Pull Request Procedure
@@ -49,15 +49,15 @@ if you haven't done so in a commit. Just include the
 like "Resolves #1" and you're good.
 * Add any labels/milestone tags that are relevant to your pull request.
 * If you'd like to submit a pull request for this documenation, see the 
-[about documenation page](About/Documentation).
+[about documenation page](../About/Documentation).
 
 # GitHub Issue Procedure
 * You can submit an issue for almost anything, but also consider that some assistance can 
-be provided by [contacting the community](Support/Converse). Some valid (and encouraged!) 
+be provided by [contacting the community](../Support/Converse). Some valid (and encouraged!) 
 example reasons to open an issue:
     * Found a bug
     * Request to see a new framework implemented
     * Framework/language readme information out of date
 * Add any appropriate labels/milestone tags for easier identification.
 * If the issue is regarding this documentation, see the 
-[about documenation page](About/Documentation).
+[about documenation page](../About/Documentation).

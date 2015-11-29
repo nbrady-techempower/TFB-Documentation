@@ -1,5 +1,5 @@
 First, ensure that you have a 
-[benchmarking evironment set up and configured](Benchmarking/Getting-Started-Benchmarking)
+[benchmarking evironment set up and configured](Getting-Started-Benchmarking)
 correctly.
 
 If you plan to run the benchmark and compare results, you need to run in _benchmark_ 
@@ -17,8 +17,9 @@ you will need to have passwordless sudo access
 Once you have cloned our repository, run `toolset/run-tests.py --help` for detailed help
 on running in _benchmark_ mode. 
 
-If you wish to benchmark on Amazon EC2, see [our scripts](deployment/vagrant-production) for 
-launching a benchmark-ready Amazon environment. 
+If you wish to benchmark on Amazon EC2, see
+[our scripts](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/deployment/vagrant-production)
+for launching a benchmark-ready Amazon environment.
 
 If you are not an expert, please ensure your setup can run in _verify_ mode before 
 attempting to run in _benchmark_ mode. 
