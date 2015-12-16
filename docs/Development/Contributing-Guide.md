@@ -56,8 +56,10 @@ like "Resolves #1" and you're good.
 be provided by [contacting the community](../Support/Converse). Some valid (and encouraged!) 
 example reasons to open an issue:
     * Found a bug
-    * Request to see a new framework implemented
     * Framework/language readme information out of date
 * Add any appropriate labels/milestone tags for easier identification.
 * If the issue is regarding this documentation, see the 
 [about documenation page](../About/Documentation).
+
+# TFB Wiki
+* The preferred method for suggesting the implementation of a new framework or language is adding it to the [TFB Wiki - Suggested Frameworks, Languages and Features](https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Suggested-Frameworks,-Languages-and-Features) Page. 
