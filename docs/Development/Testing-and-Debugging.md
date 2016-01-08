@@ -69,7 +69,14 @@ as simple as going to travis-ci.org, using the `Log in with Github`
 button, and enabling Travis-CI for your fork. When your development is 
 done and your changes pass the Travis-CI verification, submit a pull 
 request with confidence that it can be merged quickly. 
-[Read more about TFB and Travis-CI](../Project-Information/Travis-CI).
+[Read more about TFB and Travis-CI](../Project-Information/Travis-CI.md).
+
+### Important Note About Travis-CI
+
+If you make changes to configuration files, or files outside your framework
+directory, Travis will run tests on all existing frameworks. For this reason,
+it may appear that your tests have failed. Be sure to check your Travis build
+by clicking on the checkmark or red 'X' to dig into your specific test.
 
 # Debugging
 
