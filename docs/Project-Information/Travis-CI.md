@@ -162,3 +162,11 @@ A Travis account specific to your fork of TFB is highly valuable, as you have
 personal limits on *workers* and can therefore see results from Travis much 
 more quickly than you could when the Travis account for TechEmpower has a 
 full queue awaiting verification. 
+
+#### Important Note About Travis-CI
+
+If you make changes to configuration files, or files outside your framework
+directory, Travis will run tests on all existing frameworks. For this reason,
+it may appear that your tests have failed. Be sure to check your Travis build
+by clicking on the checkmark or red 'X' to dig into your specific test.
+
