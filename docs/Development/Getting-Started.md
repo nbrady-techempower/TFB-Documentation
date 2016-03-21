@@ -12,7 +12,8 @@ This is the getting started guide for __development__. If you're interested in _
 4. __Configure Your Environment__
     * Create a [benchmark.cfg file](../Codebase/Configuration-File), which is the benchmark.cfg.example with your specific configurations.
 5. __Run a Test__
-    * `toolset/run-tests.py --install server --mode verify --test ${your-test-here}` *Note: Only include "--install server" if you're running the test for the first time.*
+    * `toolset/run-tests.py --install server --mode verify --test ${your-test-here}`  
+    *Note: Only include "--install server" if you're running the test for the first time.*
 6. __Clean Up__
     * Remove the __/FrameworkBenchmarks/results directory__ if you'd like to run the same test again.
     * Remove the __contents of /FrameworkBenchmarks/installs/__ if you'd like to re-install the framework dependencies. 

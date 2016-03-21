@@ -8,7 +8,7 @@ View the [latest results](https://www.techempower.com/benchmarks/), or check out
 #Motivation
 Choosing a web application framework involves evaluation of many factors. While comparatively easy to measure, performance is frequently given little consideration. We hope to help change that. Application performance can be directly mapped to hosting dollars, and for companies both large and small, hosting costs can be a pain point. Weak performance can also cause premature and costly scale pain, user experience degradation, and penalties levied by search engines.
 
-What if building an application on one framework meant that at the very best your hardware is suitable for one tenth as much load as it would be had you chosen a different framework? The differences aren't always that extreme, but in some cases, they might be. Especially with several modern high-performance frameworks offering respectable developer efficiency, __it's worth knowing what you're getting into__.
+What if building an application on one framework meant that at the very best your hardware is suitable for one tenth as much load as it would have been had you chosen a different framework? The differences aren't always that extreme, but in some cases, they might be. Especially with several modern high-performance frameworks offering respectable developer efficiency, __it's worth knowing what you're getting into__.
 
 #Making improvements
 We expect that all frameworks' tests could be improved with community input. For that reason, we are extremely happy to receive [pull requests](https://github.com/TechEmpower/FrameworkBenchmarks/pulls) from fans of any framework. We would like our tests for every framework to perform optimally, so we invite you to please join in.

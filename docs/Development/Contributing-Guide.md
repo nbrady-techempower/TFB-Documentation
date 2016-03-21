@@ -19,13 +19,13 @@ become clogged with so many pull requests that it takes a day to finish all the
 builds. If you create a fork and enable Travis-CI.org, you will get your own 
 build queue. This means 1) only your commits/branches are being verified, so there is 
 no delay waiting for an unrelated pull request, and 2) you can cancel unneeded items. 
-This does not affect our own Travis-CI setup at all - any commits added to a pull 
+This does not affect our own Travis-CI setup at all--any commits added to a pull
 request will be verifed as normal. 
 * __Read the README__: We know that's cliche. However, our toolset drags in a lot of 
 different concepts and frameworks, and it can really help to read the documentation and 
-README's, such as this one, the one inside specific language directories, and the 
+READMEs, such as this one, the ones inside specific language directories, and the
 ones inside specific framework directories.
-* __Use the Development Virtual Machine__: Our Vagrant scripts can setup a VM for you
+* __Use the Development Virtual Machine__: Our Vagrant scripts can set up a VM for you
 that looks nearly identical to our test environment. This is even better than relying
 on the Travis-CI verification, and you are strongly encouraged to use this. See 
 the [installation guide](Installation-Guide#vagrant-development-environment) 
@@ -37,7 +37,7 @@ for specifics.
 to make changes and submit a pull request.
 * Update appropriate READMEs to match changes. Languages and frameworks have READMEs
 that are specific to them. If something has been updated that would not match the 
-README, please udpate it accordingly prior to submitting the pull request.
+README, please update it accordingly prior to submitting the pull request.
 * (optional) Squash your commits into a clean, single commit. 
 * Fetch and [rebase](https://help.github.com/articles/about-git-rebase/) off of TFB's master prior to 
 opening the pull request to ensure that your branch has the latest updates and a clean 
@@ -48,18 +48,18 @@ if you haven't done so in a commit. Just include the
 [special keyword syntax](https://help.github.com/articles/closing-issues-via-commit-messages/), 
 like "Resolves #1" and you're good.
 * Add any labels/milestone tags that are relevant to your pull request.
-* If you'd like to submit a pull request for this documenation, see the 
-[about documenation page](../About/Documentation).
+* If you'd like to submit a pull request for this documentation, see the
+[about documentation page](../About/Documentation).
 
 # GitHub Issue Procedure
 * You can submit an issue for almost anything, but also consider that some assistance can 
 be provided by [contacting the community](../Support/Converse). Some valid (and encouraged!) 
 example reasons to open an issue:
     * Found a bug
-    * Framework/language readme information out of date
+    * Framework/language README information out of date
 * Add any appropriate labels/milestone tags for easier identification.
-* If the issue is regarding this documentation, see the 
-[about documenation page](../About/Documentation).
+* If the issue is regarding this documentation, see the
+[about documentation page](../About/Documentation).
 
 # TFB Wiki
 * The preferred method for suggesting the implementation of a new framework or language is adding it to the [TFB Wiki - Suggested Frameworks, Languages and Features](https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Suggested-Frameworks,-Languages-and-Features) Page. 
