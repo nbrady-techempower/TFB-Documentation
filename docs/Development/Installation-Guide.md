@@ -215,7 +215,7 @@ $ vagrant up
 $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
 vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --install server --mode verify --test beego
-# If the local version of your code does not mirror the code in your virtual machine, then run the following:
+# For non-Windows users: if the local version of your code does not mirror the code in your virtual machine, then run the following:
 vagrant@TFB-all:~/FrameworkBenchmarks$ sudo mount.vboxsf -o uid=1000,gid=1000 FrameworkBenchmarks ~/FrameworkBenchmarks
 ```
 
