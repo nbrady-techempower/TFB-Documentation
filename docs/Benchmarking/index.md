@@ -7,5 +7,5 @@ add a new test/framework.
 
 | Page | Summary |
 |:---- |:------- |
-[Getting Started](Getting-Started-Benchmarking) | Covers setting up the benchmark suite, manual deployment, and automated deployment.
-[Running the Benchmark](Running-the-Benchmark) | A guide on how to run the benchmark and specific configurations only applicable after everything is set up and configured to do so.
+[Getting Started](Getting-Started-Benchmarking) | Covers setting up the benchmark suite, manual deployment, and automated deployment
+[Running the Benchmark](Running-the-Benchmark) | A guide on how to run the benchmark and specific configurations only applicable after everything is set up and configured to do so

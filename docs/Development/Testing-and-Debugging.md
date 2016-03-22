@@ -83,8 +83,8 @@ by clicking on the checkmark or red 'X' to dig into your specific test.
 ## Finding output logs
 
 Logs file locations use the format `results/ec2/latest/logs/wt/err.txt`. 
-The general structure is `results/<run name>/<timestamp>/logs/<test name>/<file>`
-You can use the `--name` flag to change the `<run name>`
+The general structure is `results/<run name>/<timestamp>/logs/<test name>/<file>`.
+You can use the `--name` flag to change the `<run name>`.
 If you re-run the same test multiple times, you will get a different folder
 for each `<timestamp>`, although the `latest` folder will be kept up to date. 
 The `<test name>` is simply the name of the test type you ran, and `<file>` is either `out.txt`
@@ -92,5 +92,5 @@ or `err.txt` (these are the `logout` and `logerr` arguments passed into each
 `setup.py` file. 
 
 Note: If you're looking for logs from our official benchmark rounds, see 
-[Round 9](https://github.com/TechEmpower/TFB-Round-9) and 
-[Round 8](https://github.com/TechEmpower/TFB-Round-8)
+[Round 12](http://tfb-logs.techempower.com/round-12/) and
+[Round 11](http://tfb-logs.techempower.com/round-11/)

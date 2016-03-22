@@ -11,8 +11,8 @@ practices and guidelines will help to keep us all on the same page.
 
 | Page | Summary |
 |:---- |:------- |
-[Getting Started](Getting-Started) | A brief overview of what's necessary to get started developing for TFB.
-[Contributing Guide](Contributing-Guide) | Overview of guidelines and general practices for contributing.
-[Installation Guide](Installation-Guide) | Suggestions and instructions to get a development environment set up.
-[Add Frameworks or Tests](Add-Frameworks-or-Tests) | Everything that's required and recommended to add or update a framewrok.
-[Testing and Debugging](Testing-and-Debugging) | Instructions and help for testing and debugging a framework.
+[Getting Started](Getting-Started) | A brief overview of what's necessary to get started developing for TFB
+[Contributing Guide](Contributing-Guide) | Overview of guidelines and general practices for contributing
+[Installation Guide](Installation-Guide) | Suggestions and instructions to get a development environment set up
+[Add Frameworks or Tests](Add-Frameworks-or-Tests) | Everything that's required and recommended to add or update a framework
+[Testing and Debugging](Testing-and-Debugging) | Instructions and help for testing and debugging a framework
