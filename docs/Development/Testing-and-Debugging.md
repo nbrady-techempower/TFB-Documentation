@@ -82,7 +82,7 @@ by clicking on the checkmark or red 'X' to dig into your specific test.
 
 ## Finding output logs
 
-Logs file locations use the format `results/ec2/latest/logs/wt/err.txt`. 
+Logs file locations use the format `results/latest/logs/wt/err.txt`.
 The general structure is `results/<run name>/<timestamp>/logs/<test name>/<file>`.
 You can use the `--name` flag to change the `<run name>`.
 If you re-run the same test multiple times, you will get a different folder
