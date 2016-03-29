@@ -216,7 +216,9 @@ $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
 # Note: "--install server" is unnecessary for vagrant and is not included below
 vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --mode verify --test gemini
-# For non-Windows users only (will break Windows environments): if the local version of your code does not mirror the code in your virtual machine, then run the following:
+# For non-Windows users only (will break Windows environments):
+# If the local version of your code does not mirror the code in your virtual machine, then run the following:
+# Note: the following lines must be run each time "vagrant up" is run, even after "vagrant halt"
 vagrant@TFB-all:~/FrameworkBenchmarks$ sudo mount.vboxsf -o uid=1000,gid=1000 FrameworkBenchmarks ~/FrameworkBenchmarks
 vagrant@TFB-all:~/FrameworkBenchmarks$ mkdir -p /tmp/TFB_installs
 vagrant@TFB-all:~/FrameworkBenchmarks$ mkdir -p ~/FrameworkBenchmarks/installs
