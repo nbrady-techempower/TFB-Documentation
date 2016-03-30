@@ -181,7 +181,7 @@ toolset/run-tests.py --mode verify --test gemini
 ```
 
 You can find the results for this verification step under the directory:
-`results/ec2/latest/logs/gemini`. There should be an `err` and an `out`
+`results/latest/logs/gemini`. There should be an `err` and an `out`
 file.
 
 You can choose to selectively install components by using the 
