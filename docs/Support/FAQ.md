@@ -1,4 +1,5 @@
 # FAQ
+__Please also see [Expected Questions](../Project-Information/Expected-Questions.md) for more questions and answers.__
 1. There is synthetic routing implemented for the platforms that do not provide native routing. Should we force them to have similar routing logic to other platforms?
 
     > It's up to you, but adding trivial synthetic routing shouldn't affect the numbers to a measurable degree.
