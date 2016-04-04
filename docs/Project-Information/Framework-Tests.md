@@ -75,7 +75,7 @@ The following requirements apply to all test types below.
 
     1. For every request, a single row from a __World__ table must be retrieved from a database table.
     2. The recommended URI is __/db__.
-    3. The schema for __World__ is __id__ (int, primary key) and __randomNumber__ (int), except for MongoDB, wherein the identity column is <strong>_id</strong>, with the leading underscore.
+    3. The schema for __World__ is __id__ (int, primary key) and __randomNumber__ (int), except for MongoDB, wherein the identity column is <strong>_id</strong>, with the leading underscore. For redis, use `GET "world:$id"` to fetch the value.
     4. The __World__ table is known to contain 10,000 rows.
     5. The row retrieved must be selected by its id using a random number generator (ids range from 1 to 10,000).
     6. The row should be converted to an object using an object-relational mapping (ORM) tool. Tests that do not use an ORM will be classified as "raw" meaning they use the platform's raw database connectivity.
@@ -172,7 +172,7 @@ The following requirements apply to all test types below.
 
     1. The recommended URI is __/fortunes__.
     2. A __Fortune__ database table contains a dozen Unix-style fortune-cookie messages.
-    3. The schema for __Fortune__ is __id__ (int, primary key) and __message__ (varchar), except for MongoDB, wherein the identity column is <strong>_id</strong>, with the leading underscore.
+    3. The schema for __Fortune__ is __id__ (int, primary key) and __message__ (varchar), except for MongoDB, wherein the identity column is <strong>_id</strong>, with the leading underscore. For redis, use `LRANGE "fortunes", 0, -1` to fetch the values.
     4. Using an ORM, all Fortune objects must be fetched from the Fortune table, and placed into a list data structure. Tests that do not use an ORM will be classified as "raw" meaning they use the platform's raw database connectivity.
     5. The list data structure must be a dynamic-size or equivalent and should not be dimensioned using foreknowledge of the row-count of the database table.
     6. Within the scope of the request, a new Fortune object must be constructed and added to the list. This confirms that the data structure is dynamic-sized. The new fortune is not persisted to the database; it is ephemeral for the scope of the request.
