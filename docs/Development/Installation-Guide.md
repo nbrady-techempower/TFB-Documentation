@@ -244,3 +244,15 @@ Taking snapshot initial
 # Use VM as normal
 $ vagrant ssh
 ```
+
+## Vagrant VirtualBox Guest
+Optional: You can automatically update VirtualBox Guest Additions to the current version of VirtualBox that is being used every time you enter 'vagrant up'. This will also allow you to keep all of your vagrant mounts after kernel upgrades in VirtualBox. Run the following one time after 'cd ~/FrameworkBenchmarks/deployment/vagrant-development' (must already have RVM installed):
+```bash
+# To install the plugin:
+$ vagrant plugin install vagrant-vbguest
+# From now on every 'vagrant up' will check and install the correct
+# guest additions, but you can also force an update this way:
+$ vagrant plugin update vagrant-vbguests
+# You can also force vagrant to reload and recheck for updates this way:
+$ vagrant reload
+```
