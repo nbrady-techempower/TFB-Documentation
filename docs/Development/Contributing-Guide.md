@@ -33,23 +33,35 @@ for specifics.
 
 # Github Pull Request Procedure
 
-* Use a branch in your [forked repository](https://help.github.com/articles/fork-a-repo/) 
-to make changes and submit a pull request.
-* Update appropriate READMEs to match changes. Languages and frameworks have READMEs
-that are specific to them. If something has been updated that would not match the 
-README, please update it accordingly prior to submitting the pull request.
-* (optional) Squash your commits into a clean, single commit. 
-* Fetch and [rebase](https://help.github.com/articles/about-git-rebase/) off of TFB's master prior to 
-opening the pull request to ensure that your branch has the latest updates and a clean 
-history.
-* If your PR is fixing an issue, 
-[tag it in the PR body](https://github.com/blog/1506-closing-issues-via-pull-requests) 
-if you haven't done so in a commit. Just include the 
-[special keyword syntax](https://help.github.com/articles/closing-issues-via-commit-messages/), 
-like "Resolves #1" and you're good.
-* Add any labels/milestone tags that are relevant to your pull request.
-* If you'd like to submit a pull request for this documentation, see the
-[about documentation page](../About/Documentation).
+If you'd like to submit a pull request for this documentation, see the
+[about documentation page](../About/Documentation). Otherwise, follow the steps
+below.
+
+1. The branch that your branch will need to be based off of depends on the
+purpose of the pull request.
+    * For a bug fix, base your branch off of TFB `master`.
+    * For anything else, base your branch off of the next TFB round branch
+    (`round-#`).
+2. Submit your pull request from a branch in your
+[forked repository](https://help.github.com/articles/fork-a-repo/) to make
+changes and submit a pull request.
+3. (optional) Clean up your commit(s) to provide future contributors with more
+helpful information. Some sugguestions are:
+    * Squash your commits into a clean, single commit (remove in-progress
+    commits).
+    * Rewrite your commit messages to be as detailed as possible.
+4. Fetch and [rebase](https://help.github.com/articles/about-git-rebase/) off
+of the appropriate TFB branch (`master` for a fix, `round-#` otherwise) prior
+to opening the pull request to ensure that your branch has the latest updates
+and a clean history.
+5. If your PR is fixing an issue,
+[tag the issue in the PR body](https://github.com/blog/1506-closing-issues-via-pull-requests)
+if you haven't done so in a commit. Just include the
+[special keyword syntax](https://help.github.com/articles/closing-issues-via-commit-messages/),
+like "Resolves #1" and the issue will be automatically closed when your merge
+request is merged in.
+6. Open a PR from the branch on your repo with the target set to the
+appropriate TFB branch (`master` for a bugfix, `round-#` otherwise).
 
 # GitHub Issue Procedure
 * You can submit an issue for almost anything, but also consider that some assistance can 
