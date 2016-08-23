@@ -120,7 +120,7 @@ The following requirements apply to all test types below.
 
     In addition to the requirements listed below, please note the [general requirements](#general-test-requirements) that apply to all implemented tests.
 
-    1. For every request, an integer query string parameter named 'queries' must be retrieved from the request. The parameter specifies the number of database queries to execute in preparing the HTTP response (see below).
+    1. For every request, an integer query string parameter named `queries` must be retrieved from the request. The parameter specifies the number of database queries to execute in preparing the HTTP response (see below).
     2. The recommended URI is __/queries__. _Note: Whether there is an actual request parameter named `queries` is not important. The url should best reflect the practices of the particular framework. So, both "/queries?queries=" and "/queries/" are valid paths._
     3. The `queries` parameter must be bounded to between 1 and 500. If the parameter is missing, is not an integer, or is an integer less than 1, the value should be interpreted as 1; if greater than 500, the value should be interpreted as __500__.
     4. The request handler must retrieve a set of __World__ objects, equal in count to the `queries` parameter, from the __World__ database table.
