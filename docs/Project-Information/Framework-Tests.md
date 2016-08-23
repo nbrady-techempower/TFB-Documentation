@@ -120,14 +120,12 @@ The following requirements apply to all test types below.
 
     In addition to the requirements listed below, please note the [general requirements](#general-test-requirements) that apply to all implemented tests.
 
-    1. For every request, an integer `query` string parameter named queries must be retrieved from the request. The parameter specifies the number of database queries to execute in preparing the HTTP response (see below).
-    2. The recommended URI is __/queries__. _Note: Whether there is an actual request 
-    parameter named `queries` is not important. The url should best reflect the 
-    practices of the particular framework. So, both "/queries?queries=" and "/queries/" are valid paths._
+    1. For every request, an integer query string parameter named 'queries' must be retrieved from the request. The parameter specifies the number of database queries to execute in preparing the HTTP response (see below).
+    2. The recommended URI is __/queries__. _Note: Whether there is an actual request parameter named `queries` is not important. The url should best reflect the practices of the particular framework. So, both "/queries?queries=" and "/queries/" are valid paths._
     3. The `queries` parameter must be bounded to between 1 and 500. If the parameter is missing, is not an integer, or is an integer less than 1, the value should be interpreted as 1; if greater than 500, the value should be interpreted as __500__.
     4. The request handler must retrieve a set of __World__ objects, equal in count to the `queries` parameter, from the __World__ database table.
     5. Each row must be selected randomly in the same fashion as the single database query test (Test #2 above).
-    6. Since this test is designed to exercise multiple queries, each row must be selected individually by a query. It is not acceptable to retrieve all required rows using a `SELECT ... WHERE id IN (...`) clause.
+    6. This test is designed to exercise multiple queries, each requiring a round-trip to the database server, and with each resulting row selected individually. It is not acceptable to use batches. It is not acceptable to execute multiple SELECTs within a single statement. It is not acceptable to retrieve all required rows using a `SELECT ... WHERE id IN (...)` clause.
     7. Each __World__ object must be added to a list or array.
     8. The list or array must be serialized to JSON and sent as a response.
     9. The response content type must be set to `application/json`.
@@ -247,11 +245,11 @@ The following requirements apply to all test types below.
     2. For every request, an integer `query` string parameter named queries must be retrieved from the request. The parameter specifies the number of rows to fetch and update in preparing the HTTP response (see below).
     3. The `queries` parameter must be bounded to between 1 and 500. If the parameter is missing, is not an integer, or is an integer less than __1__, the value should be interpreted as 1; if greater than 500, the value should be interpreted as __500__.
     4. The request handler must retrieve a set of __World__ objects, equal in count to the `queries` parameter, from the __World__ database table.
-    5. Each row must be selected randomly using one query in the same fashion as the single database query test (Test #2 above). As with the read-only multiple-query test type (#3 above), use of `IN` clauses or similar means to consolidate multiple queries into one operation is not permitted.
+    5. Each row must be selected randomly using one query in the same fashion as the single database query test (Test #2 above). As with the read-only multiple-query test type (#3 above), use of `IN` clauses or similar means to consolidate multiple queries into one operation is not permitted.  Similarly, use of a batch or multiple SELECTs within a single statement are not permitted.
     6. At least the `randomNumber` field must be read from the database result set.
     7. Each __World__ object must have its `randomNumber` field updated to a new random integer between 1 and 10000.
     8. Each __World__ object must be persisted to the database with its new `randomNumber` value.
-    9. Use of batch updates is acceptable but not required.
+    9. Use of batch updates is acceptable but not required.  To be clear: batches are not permissible for selecting/reading the rows, but batches are acceptable for writing the updates.
     10. Use of transactions is acceptable but not required. If transactions are used, a transaction should only encapsulate a single iteration, composed of a single read and single write. Transactions should not be used to consolidate multiple iterations into a single operation.
     11. For raw tests (that is, tests without an ORM), each updated row must receive a unique new `randomNumber` value. It is not acceptable to change the `randomNumber` value of all rows to the same random number using an `UPDATE ... WHERE id IN (...)` clause.
     12. Each __World__ object must be added to a list or array.
