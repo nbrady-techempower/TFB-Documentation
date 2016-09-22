@@ -200,6 +200,33 @@ toolset/run-tests.py --install server --test php* --exclude php-fuel --verbose i
 $ toolset/run-tests.py --install server --verbose --install-only
 ```
 
+**Tuning your VM (optional)**
+
+In some cases, particularly if you are running the tests on high-performance machines, you may start to see high latency and poor results due to certain system configurations throttling the power of your hardware. Warning signs to look out for include:
+* High max latency for the wrk tests with a large number of concurrent connections when running a high-performance framework (libreactor, undertow, gemini, etc.)
+* Requests/second decreasing rather than increasing as the number of concurrent connections goes up
+* When running htop during a test, you see very high (~90%) kernal time (the red) and relatively low (~10%) program time (the green)
+* Running an iperf test between two of your machines with a fairly high number of concurrent connections (using the -P16 or -P32 flag) shows a drop in overall throughput
+* You are generally seeing results that are much lower than you would expect, given the hardware you are running your 
+tests on
+
+To address these issues, we've had the most success with the [Ubuntu Tuned](https://github.com/edwardbadboy/tuned-ubuntu) tool configured to use the `latency-performance` profile. You *should* only have to use this on the App Server machine. First, install it on your system:
+```bash
+sudo apt-get install git git-core build-essential
+sudo apt-get install rpm python-decorator python-dbus python-gobject python-pyudev python-configobj
+git clone https://github.com/edwardbadboy/tuned-ubuntu.git
+cd tuned-ubuntu
+sudo make install
+```
+
+Restart your machine. Then start up the service and set your profile:
+```bash
+sudo service tuned start
+sudo tuned --profile latency-performance
+```
+
+And that should do it! 
+
 # Vagrant Development Environment
 
 The simplest way to begin development is to set up [vagrant](https://www.vagrantup.com/). 
