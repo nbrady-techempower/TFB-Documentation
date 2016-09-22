@@ -200,7 +200,7 @@ toolset/run-tests.py --install server --test php* --exclude php-fuel --verbose i
 $ toolset/run-tests.py --install server --verbose --install-only
 ```
 
-**Tuning your VM (optional)**
+**Tuning your Machine (optional)**
 
 In some cases, particularly if you are running the tests on high-performance machines, you may start to see high latency and poor results due to certain system configurations throttling the power of your hardware. Warning signs to look out for include:
 * High max latency for the wrk tests with a large number of concurrent connections when running a high-performance framework (libreactor, undertow, gemini, etc.)
