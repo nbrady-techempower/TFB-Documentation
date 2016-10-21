@@ -223,13 +223,13 @@ __Required Host Roles__
 
 * Client (aka load generation) Server
     * Runs the benchmark client
-    * Operating system: Ubuntu Server 14.04 LTS 64-bit.
+    * Operating system: `Ubuntu Server 14.04 LTS 64-bit`
 * Database Server
-    * Hosts databases (e.g. `MySQL`, `PostgreSQL`, `MongoDB`, `SQL Server`).
+    * Hosts databases (e.g. `MySQL`, `PostgreSQL`, `MongoDB`, `SQL Server`, `Cassandra`, `Elasticsearch` or `Redis`).
     * Operating system: `Ubuntu Server 14.04 LTS 64-bit` or `Windows Server 2012 Datacenter 64-bit`
 * App (aka web framework) Server
     * Hosts the web frameworks under test
-    * Operating system: `Windows Server 2012 Datacenter 64-bit` or `Ubuntu Server 14.04 LTS 64-bit`
+    * Operating system: `Ubuntu Server 14.04 LTS 64-bit` or `Windows Server 2012 Datacenter 64-bit`
 
 ## Manual Deployment
 
