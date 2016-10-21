@@ -5,8 +5,8 @@ If you're interested in __development__ please visit the
 You will need three computers (or virtual machines) networked 
 together to fill the three benchmark roles of database server, 
 load generation server, and web framework server. We provide 
-a Vagrant script to setup a full benchmark-ready Linux 
-environment in Amazon EC2.
+a [Vagrant script](../Codebase/Summary-of-Script-Directories) to
+setup a full benchmark-ready Linux environment in Amazon EC2.
 
 If you wish to benchmark a framework on a non-Amazon cloud, e.g. 
 Azure or Rackspace, or a framework that requires Windows OS or 
