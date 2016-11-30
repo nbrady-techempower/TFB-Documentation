@@ -4,7 +4,7 @@ This is the getting started guide for __development__. If you're interested in _
     * [Fork](https://help.github.com/articles/fork-a-repo/) the [TFB project](https://github.com/TechEmpower/FrameworkBenchmarks/) to your own repository.
     * Clone your TFB repository to your local environment to get started.
 2. __Set up a development environment__  
-    * Typically a TFB environment is set up by using a remote server dedicated to this project or by using a virtual machine. Because you're getting set up for development, you can use an environment with a single computer running the database, the load generation system, and the web framework. 
+    * We strongly recommended that you set up your TFB environment in a virtual machine or on a remote server dedicated to this project, as the suite adds users with escalated privileges, requires most ports to be open, installs system software, and may uninstall or reinstall software that you already have. Our production environments use 3 separate servers to run the database, the load-generation system, and the web framework itself, but since you are getting set up for development, you can run all 3 on a single machine. 
     * Get started quickly and [set up your development environment with vagrant](Installation-Guide#vagrant-development-environment), or
     * [Click here for the guide to get your development environment set up.](Installation-Guide) *Note: We provide [scripts](../Codebase/Summary-of-Script-Directories) for configuring a Linux development environment using either Virtualbox or Amazon EC2, and are actively searching for help adding Windows.*
 3. __Enable Travis-CI__
