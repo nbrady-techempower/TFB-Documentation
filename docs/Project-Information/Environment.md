@@ -12,7 +12,7 @@ For language and framework specific details, view their README within their resp
 * [EC2](https://aws.amazon.com/ec2/): Amazon EC2 c3.large instances; switched gigabit Ethernet
 
 ##Operating Systems
-* [Ubuntu Linux](http://www.ubuntu.com/desktop) 12.04 64-bit
+* [Ubuntu Linux](http://www.ubuntu.com/desktop) 14.04 64-bit
 
 ##Databases
 * [MySQL](http://dev.mysql.com/)
