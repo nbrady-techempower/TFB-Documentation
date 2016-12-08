@@ -4,31 +4,48 @@ specific and unique to each framework.
 
 | File | Summary |
 |:---- |:------- |
-[Install File](#install-file) | Installs the framework and all of the dependencies for the framework (if not already installed).
-[Setup File](#setup-file) | Configures the framework to the correct database hosts, package framework code, and starts the framework.
+[Setup File](#setup-file) | Installs the framework and its dependencies, configures the framework to the correct database hosts, package framework code, and starts the framework.
 [Benchmark Config File](#benchmark-config-file) | Defines test instructions and metadata for the framework benchmarks program.
 
 # Available Bash Variables 
 
-Because they're bash scripts, both install.sh and setup.sh have 
-these bash variables available to them.
+Because it is a bash script, `setup.sh` has these bash variables available:
 
 * FWROOT: Root of project
 * IROOT: Root of installation for the current framework
 * TROOT: Root directory for the current framework 
 
-# Install File
+# Setup File
 
-The `install.sh` file for each framework starts the bash process which will 
-install that framework. Typically, the first thing done is to call `fw_depends` 
+The setup file is responsible for installing the framework software and starting the test.
+This script is responsible for (among other things):
+
+* Installing any software or tools needed by the framework
+* Modifying the framework's configuration to point to the correct database host
+* Compiling and/or packaging the code
+* Starting the server
+
+The setup file is a shell script that should build the source, make any necessary changes 
+to the framework's configuration, and then start the server.
+
+__Installing system software__
+
+Typically, the first thing done is to call `fw_depends` 
 to run installations for any necessary software that TFB has already 
 created installation scripts for. TFB provides a reasonably wide range of 
-core software, so your `install.sh` may only need to call `fw_depends` and 
-exit. Note: `fw_depends` does not guarantee dependency installation, so 
+core software, so your `setup.sh` may only need to call `fw_depends` to acquire the 
+tools it needs. You are also free to add install scripts to the `toolset/setup/linux`  
+directory if a tool does not already exist.
+
+To see what TFB provides installations for, look in `toolset/setup/linux`
+in the folders `frameworks`, `languages`, `systools`, and `webservers`. 
+You should pass the filename, without the ".sh" extension, to fw_depends. 
+
+Note: `fw_depends` does not guarantee dependency management, so 
 list software in the proper order e.g. if `foo` depends on `bar`
 use `fw_depends bar foo`.
 
-Here are some example `install.sh` files
+Here are some examples of installing software using `fw_depends`:
 
 ```bash
 #!/bin/bash
@@ -40,56 +57,9 @@ fw_depends nodejs
 ```bash
 #!/bin/bash
 
-# My framework needs nodejs and mono and go
-fw_depends nodejs mono go
+# My framework needs composer and php7, but since composer depends on php7, I should require php7 first
+fw_depends php7 composer
 ```
-
-```bash
-#!/bin/bash
-
-# My framework needs nodejs
-fw_depends nodejs
-
-# ...and some other software that there is no installer script for.
-# Note: Use IROOT variable to put software in the right folder. 
-#       You can also use FWROOT to refer to the project root, or 
-#       TROOT to refer to the root of your framework
-# Please see guidelines on writing installation scripts
-wget mystuff.tar.gz -O mystuff.tar.gz
-untar mystuff.tar.gz
-cd mystuff
-make --prefix=$IROOT && sudo make install
-```
-
-To see what TFB provides installations for, look in `toolset/setup/linux`
-in the folders `frameworks`, `languages`, `systools`, and `webservers`. 
-You should pass the filename, without the ".sh" extension, to fw_depends. 
-Here is a listing as of July 2014: 
-
-```bash
-$ ls frameworks                                                                
-grails.sh  nawak.sh  play1.sh  siena.sh     vertx.sh  yesod.sh
-jester.sh  onion.sh  play2.sh  treefrog.sh  wt.sh
-$ ls languages
-composer.sh  erlang.sh   hhvm.sh   mono.sh    perl.sh     pypy.sh     racket.sh   urweb.sh
-dart.sh      go.sh       java.sh   nimrod.sh  python2.sh  ringojs.sh  xsp.sh
-elixir.sh    haskell.sh  jruby.sh  nodejs.sh  php.sh      python3.sh  ruby.sh 
-$ ls systools
-leiningen.sh  maven.sh
-$ ls webservers
-lapis.sh  mongrel2.sh  nginx.sh  openresty.sh  resin.sh  weber.sh  zeromq.sh
-```
-
-# Setup File
-
-The setup file is responsible for starting the test. This script is responsible for (among other things):
-
-* Modifying the framework's configuration to point to the correct database host
-* Compiling and/or packaging the code (if impossible to do in `install.sh`)
-* Starting the server
-
-The setup file is a shell script that should build the source, make any necessary changes 
-to the framework's configuration, and then start the server.
 
 __Configuring database connectivity__
 
