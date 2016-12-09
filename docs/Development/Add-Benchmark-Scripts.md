@@ -3,8 +3,8 @@
 __Guidelines for Writing Installation Scripts__
 
 Whether you are writing new dependency files (e.g. a new language installation
-script) or just appending custom code to your framework's `install.sh`, here 
-are some guidelines for proper use.
+script) or just appending custom code to your framework's `setup.sh`, here 
+are some guidelines for proper use:
 
 0. Familiarize yourself with the functions available in `bash_functions.sh`.
 1. **Use caching whenever possible** : Use `fw_exists` to avoid re-running 
