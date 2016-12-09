@@ -21,6 +21,8 @@ README as possible. Feel free to add any additional information as well.
 7. Get Help
     * Experts in {language} available to contact
     * {language} community (irc channels, google groups, et cetera...)
+    
+__Example:__ [Python](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks/Python)
 
 # Framework READMEs
 
@@ -46,3 +48,5 @@ well.
 4. Get Help
     * Resources
     * Experts in {framework} available to contact
+    
+__Example:__: [Java/revenj](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks/Java/revenj)
