@@ -105,11 +105,10 @@ The function `Installer#__install_server_software` is called to install
 server software. Here are the steps it follows: 
 
 1. Use `--test` and `--exclude` flags to decide which frameworks need installation. For each test, do the following: 
-2. If this test has a `bash_profile.sh` file, load the environment from it
-3. Find installation directory for this test, set environment variable `IROOT`
-4. Find root directory for this test, set environment variable `TROOT`
-5. Load the functions from `toolset/setup/linux/bash_functions.sh`
-6. Execute the `install.sh` for this test. This normally uses functions 
+2. Find installation directory for this test, set environment variable `IROOT`
+3. Find root directory for this test, set environment variable `TROOT`
+4. Load the functions from `toolset/setup/linux/bash_functions.sh`
+5. Execute the `setup.sh` for this test. This normally uses functions 
 defined in `bash_functions.sh`, such as `fw_depends`
 
 ## Database Installation

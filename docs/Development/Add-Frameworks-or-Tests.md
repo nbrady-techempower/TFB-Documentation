@@ -1,7 +1,6 @@
 When adding a new framework or new test to an existing framework, please follow 
 these steps:
 
-* Add/Update an [install.sh file](../Codebase/Framework-Files#install-file).
 * Add/Update a [setup file](../Codebase/Framework-Files#setup-file).
 * Add/Update a [benchmark_config.json](../Codebase/Framework-Files#benchmark-config-file).
 * Implement at least one [test](../Project-Information/Framework-Tests#test-types) 

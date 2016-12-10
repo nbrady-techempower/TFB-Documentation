@@ -297,7 +297,7 @@ The following requirements apply to all test types below.
     1. The recommended URI is __/plaintext__.
     2. The response content type must be set to `text/plain`.
     3. The response body must be `Hello, World!`.
-    4. This test is not intended to exercise the allocation of memory or instantiation of objects. Therefore it is acceptable but not required to re-use a single buffer for the response text (`Hello, World`). However, the response must be fully composed from this and its headers within the scope of each request and it is not acceptable to store the entire payload of the response, headers inclusive, as a pre-rendered buffer.
+    4. This test is not intended to exercise the allocation of memory or instantiation of objects. Therefore it is acceptable but not required to re-use a single buffer for the response text (`Hello, World`). However, the rest of the response must be fully composed on the spot. It is not acceptable to store the entire payload of the response, headers inclusive, as a pre-rendered buffer.
     5. The response headers must include either `Content-Length` or `Transfer-Encoding`.
     6. The response headers must include `Server` and `Date`.
     7. gzip compression is not permitted.

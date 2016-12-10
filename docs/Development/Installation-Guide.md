@@ -203,6 +203,7 @@ $ toolset/run-tests.py --install server --verbose --install-only
 **Tuning your Machine (optional)**
 
 In some cases, particularly if you are running the tests on high-performance machines, you may start to see high latency and poor results due to certain system configurations throttling the power of your hardware. Warning signs to look out for include:
+
 * High max latency for the wrk tests with a large number of concurrent connections when running a high-performance framework (libreactor, undertow, gemini, etc.)
 * Requests/second decreasing rather than increasing as the number of concurrent connections goes up
 * When running htop during a test, you see very high (~90%) kernal time (the red) and relatively low (~10%) program time (the green)

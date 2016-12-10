@@ -51,7 +51,7 @@ The *build* is marked *pass* only if every *job* returns *pass*.
 multiple limits. 
 
 Each time someone pushes new commits to master (or to a pull request), 
-a new *build* is triggered that contains ~100 *jobs*, one for each 
+a new *build* is triggered that contains ~180 *jobs*, one for each 
 framework directory. This obviously is resource intensive, so it is 
 critical to understand travis limits. 
 
@@ -59,7 +59,7 @@ critical to understand travis limits.
 this limit (most take 10-15 minutes total)
 
 **Max Concurrent Jobs**: `4 jobs`, but can increase to 10 if Travis has low 
-usage. This is our main limiting factor, as each *build* causes ~100 *jobs*.
+usage. This is our main limiting factor, as each *build* causes ~180 *jobs*.
 Discussed below
 
 **Min Console Output**: If `10 minutes` pass with no output to stdout or stderr, 

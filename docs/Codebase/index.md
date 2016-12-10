@@ -2,26 +2,28 @@
 
 Here are the relevant pieces of TFB's file structure:
 
+* .github/
+    * PULL_REQUEST_TEMPLATE.md
 * [config/](#config)
     * cassandra/
+    * elasticsearch/
 * [deployment/](#deployment)
     * azure/
     * vagrant-development/
-    * et cetera...
+    * etc...
 * [frameworks/](#frameworks)
     * Java/
         * [README.md](#language-readmemd)
         * dropwizard/
             * [README.md](#framework-readmemd)
             * [benchmark_config.json (Framework Specific File)](#framework-specific-files)
-            * [install.sh (Framework Specific File)](#framework-specific-files)
             * [setup.sh (Framework Specific File)](#framework-specific-files)
             * [source_code](#source-code-file)
-            * et cetera...
+            * etc...
         * gemini/
-        * et cetera...
+        * etc...
     * Ruby/
-    * et cetera...
+    * etc...
 * [toolset/](#toolset)
     * [benchmark/](#benchmark)
         * benchmarker.py
@@ -87,7 +89,6 @@ information within their individual READMEs. However, there are three
 files that are required by the TFB suite. These are:
 
 * benchmark_config.json
-* install.sh
 * setup.sh
 
 See the section on [Framework Specific Files](Framework-Files) 
@@ -139,9 +140,9 @@ benchmark, please refer to the [benchmarking section](../Benchmarking).
 This directory contains scripts to install the benchmark suite on adequately 
 provisioned hosts. It is composed of these directories:
 
-linux: Scripts to setup the Linux server and the Linux client and database server.
-sqlserver: Scripts to setup the SQL Server database server.
-windows: Scripts to setup the Windows server.
+* linux: Scripts to setup the Linux server and the Linux client and database server.
+* sqlserver: Scripts to setup the SQL Server database server.
+* windows: Scripts to setup the Windows server.
 
 ##### Installation Script Directories
 

@@ -39,9 +39,15 @@ below.
 
 1. The branch that your branch will need to be based off of depends on the
 purpose of the pull request.
-    * For a bug fix, base your branch off of TFB `master`.
-    * For anything else, base your branch off of the next TFB round branch
-    (`round-#`).
+    * For a bug fix based on preview results, base your branch off of the 
+    next TFB round branch (`round-#`).
+    * For anything else, base your branch off of `master`. These changes will 
+    show up in the following round, so if we are currently in preview for 
+    Round 14, any changes merged into `master` will be reflected in the Round
+     15 results.
+    * __Note:__ if we are not currently in a preview for an official round
+    release, there will be no `round-#` branch and all fixes can be branched
+     off of `master`. 
 2. Submit your pull request from a branch in your
 [forked repository](https://help.github.com/articles/fork-a-repo/) to make
 changes and submit a pull request.
@@ -51,7 +57,7 @@ helpful information. Some sugguestions are:
     commits).
     * Rewrite your commit messages to be as detailed as possible.
 4. Fetch and [rebase](https://help.github.com/articles/about-git-rebase/) off
-of the appropriate TFB branch (`master` for a fix, `round-#` otherwise) prior
+of the appropriate TFB branch (`round-#` for a fix, `master` otherwise) prior
 to opening the pull request to ensure that your branch has the latest updates
 and a clean history.
 5. If your PR is fixing an issue,
@@ -61,7 +67,9 @@ if you haven't done so in a commit. Just include the
 like "Resolves #1" and the issue will be automatically closed when your merge
 request is merged in.
 6. Open a PR from the branch on your repo with the target set to the
-appropriate TFB branch (`master` for a bugfix, `round-#` otherwise).
+appropriate TFB branch (`round-#` for a bugfix, `master` otherwise). The PR
+body will be prepopulated with a Pull Request Template explaining the
+appropriate branch to use, if you are unsure.
 
 # GitHub Issue Procedure
 * You can submit an issue for almost anything, but also consider that some assistance can 
