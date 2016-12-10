@@ -10,7 +10,7 @@ README as possible. Feel free to add any additional information as well.
 
 1. Infrastructure Software Versions (if most/all frameworks use the same install)
     * of language (link to language homepage)
-    * et cetera...
+    * etc...
 2. Caveats when Compared to Other Frameworks
 3. Dependency Management
 4. Adding a New {language} Framework
@@ -42,7 +42,7 @@ well.
     * JSON Serialization
     * Single Database Query
     * Plaintext
-    * et cetera...
+    * etc...
 2. Special Instructions for Adding New Tests or Applications
 3. Test URLs
 4. Get Help

@@ -9,7 +9,7 @@ and can be previewed locally using [mkdocs](http://mkdocs.readthedocs.org/en/lat
 We use [readthedocs.org](https://readthedocs.org/) to automatically build 
 and display documentation when anything is committed to our master branch. 
 
-So, you're able to see if the docs will properly build locally 
+You can see if the docs will properly build locally 
 before submitting a pull request by running `mkdocs serve`. 
 You can also see the error within your command line if the docs 
 aren't building properly. If you need more information on 
