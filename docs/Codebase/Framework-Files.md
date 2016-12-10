@@ -79,7 +79,7 @@ sed -i 's|mysql://.*:3306|mysql://'"${DBHOST}"':3306|g' src/main/webapp/WEB-INF/
 ```
 
 Note: `args` contains a number of useful items, such as `troot`, `iroot`, `fwroot` (comparable
-to their bash counterparts in `install.sh`, `database_host`, `client_host`, and many others)
+to their bash counterparts in `setup.sh`, `database_host`, `client_host`, and many others)
 
 Note: Using `localhost` in the raw configuration file is not a requirement as long as the
 `sed` call properly injects the database host provided to the benchmark toolset as a command 
