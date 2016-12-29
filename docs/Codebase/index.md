@@ -38,6 +38,7 @@ Here are the relevant pieces of TFB's file structure:
         * sqlserver/
         * windows/
     * [test/](#test)
+    * [travis/](#travis)
 * [.travis.yml](#travisyml)
 * [benchmark.cgf(.example)](#benchmarkcfg)
 
