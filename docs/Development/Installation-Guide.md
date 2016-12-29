@@ -149,28 +149,6 @@ You will need to change, at a minimum, the following:
 * `database_user` Set to your username
 * `server_host` Set this to the IP address of your server machine
 
-At this point, you should be ready to install the suite.
-
-We use the `--install-only` flag in our examples to 
-prevent launching tests at this stage. All of these commands 
-should be run from the `app server` - it will SSH into other
-hosts as needed. For more information on how TFB installation 
-works, see [here](../Benchmarking/Getting-Started-Benchmarking/#benchmark-suite-deployment).
-
-**Setting up the `load server`**
-
-```bash
-toolset/run-tests.py --install client --install-only
-```
-
-**Setting up the `database server`**
-
-```bash
-toolset/run-tests.py --install database --install-only
-```
-
-**Setting up the `app server`**
-
 At this point, you should be able to run a benchmark of the entire
 suite or selectively run individual benchmarks. Additionally, you
 can test your setup by running a verification on one of the stable
@@ -183,22 +161,6 @@ toolset/run-tests.py --mode verify --test gemini
 You can find the results for this verification step under the directory:
 `results/latest/logs/gemini`. There should be an `err` and an `out`
 file.
-
-You can choose to selectively install components by using the 
-`--test` and `--exclude` flags. 
-
-```bash
-# Install just the software for beego (as an example)
-toolset/run-tests.py --install server --test beego --verbose --install-only
-
-# Install all php software but php-fuel (as another example)
-toolset/run-tests.py --install server --test php* --exclude php-fuel --verbose install-only
-
-# Install *all* framework software. Expect this to take hours!
-# If running on a remote server, use `screen` or `tmux` or `nohup` to 
-# prevent the installation from being terminated if you are disconnected
-$ toolset/run-tests.py --install server --verbose --install-only
-```
 
 **Tuning your Machine (optional)**
 
@@ -242,7 +204,6 @@ $ vagrant up
 # Enter the VM, then run a test
 $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
-# Note: "--install server" is unnecessary for vagrant and is not included below
 vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --mode verify --test gemini
 # For non-Windows users only (will break Windows environments):
 # If the local version of your code does not mirror the code in your virtual machine, then run the following:

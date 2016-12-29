@@ -31,8 +31,8 @@ isolated virtual machine called a *worker*.
 Our project has one *job* for each framework directory, e.g. 
 one *job* for `go`, one *job* for `activeweb`, etc. Each 
 *job* gets it's own *worker* virtual machine that runs the 
-installation for that framework (using `--install server`) and 
-verifies the framework's output using `--mode verify`. 
+installation for that framework and verifies the framework's output 
+using `--mode verify`. 
 
 The *.travis.yml* file specifies the *build matrix*, which is 
 the set of *jobs* that should be run for each *build*. Our 

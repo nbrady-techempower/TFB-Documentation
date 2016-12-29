@@ -77,7 +77,7 @@ The client/database machine is still assumed to be a Linux box. Unless you alrea
 have the Linux server and client as described below, you can install just the 
 client software with this:
 
-    python toolset\run-tests.py -s server-private-ip -c client-private-ip -i "C:\Users\Administrator\Desktop\client.key" --install-software --install client --list-tests
+    python toolset\run-tests.py -s server-private-ip -c client-private-ip -i "C:\Users\Administrator\Desktop\client.key" --list-tests
 
 Now you can run tests:
 
