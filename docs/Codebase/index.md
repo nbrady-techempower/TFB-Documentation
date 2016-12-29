@@ -38,6 +38,7 @@ Here are the relevant pieces of TFB's file structure:
         * sqlserver/
         * windows/
     * [test/](#test)
+    * [travis/](#travis)
 * [.travis.yml](#travisyml)
 * [benchmark.cgf(.example)](#benchmarkcfg)
 
@@ -150,22 +151,15 @@ These directories help organize the installation scripts into four
 cagegories (frameworks, languages, systools, and webservers), 
 which are called by [`installer.py`](#installerpy) when tests are run. 
 Visit the [installation script section](../Development/Add-Benchmark-Scripts#installation-scripts) 
-for guidelines on writing an installation script, or visit the 
-[installer file section](Setup-Files#installer-file) for 
-more information on how the installer scripts are called.
-
-##### installer.py
-
-The `installer.py` file calls into the shell to perform all installation steps. 
-It installs three different sets of software, the server software we want to 
-test, the database that we want to use with the server software, and the client 
-software that we want to use to generate load for the server. The 
-[installer file section](Setup-Files#installer-file) gives 
-an overview of how this installation process works.
+for guidelines on writing an installation script.
 
 #### test/
 
 Script for [Travis-CI](../Project-Information/Travis-CI).
+
+#### travis/
+
+Folder specifically for travis scripts.
 
 ### .travis.yml
 

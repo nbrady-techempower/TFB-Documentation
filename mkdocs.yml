@@ -34,7 +34,6 @@ pages:
   - 'Configuration File': 'Codebase/Configuration-File.md'
   - 'Framework Files': 'Codebase/Framework-Files.md'
   - 'Summary of Script Directories': 'Codebase/Summary-of-Script-Directories.md'
-  - 'Setup Files': 'Codebase/Setup-Files.md'
 - About:
   - 'Framework Benchmarks': 'About/Framework-Benchmarks.md'
   - 'TechEmpower': 'About/TechEmpower.md'

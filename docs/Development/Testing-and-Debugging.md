@@ -66,10 +66,11 @@ the new operating system.  See, for example,
 # Travis-CI
 Enable [Travis-CI](https://travis-ci.org) on your project fork. This is 
 as simple as going to travis-ci.org, using the `Log in with Github` 
-button, and enabling Travis-CI for your fork. When your development is 
-done and your changes pass the Travis-CI verification, submit a pull 
-request with confidence that it can be merged quickly. 
-[Read more about TFB and Travis-CI](../Project-Information/Travis-CI.md).
+button, and enabling Travis-CI for your fork. If you're submitting a new 
+framework, be sure to add it to the `travis.yml` file in the root of the
+project. When your development is done and your changes pass the Travis-CI 
+verification, submit a pull request with confidence that it can be merged 
+quickly. [Read more about TFB and Travis-CI](../Project-Information/Travis-CI.md).
 
 ### Important Note About Travis-CI
 
