@@ -149,13 +149,23 @@ You will need to change, at a minimum, the following:
 * `database_user` Set to your username
 * `server_host` Set this to the IP address of your server machine
 
+Now in your `/etc/hosts` file add the following lines, replacing `127.0.0.1` with the appropriate IPs:
+
+```
+127.0.0.1 TFB-database
+127.0.0.1 TFB-client
+127.0.0.1 TFB-server
+```
+
 At this point, you should be able to run a benchmark of the entire
 suite or selectively run individual benchmarks. Additionally, you
 can test your setup by running a verification on one of the stable
-frameworks. Since we wrote it, we tend to test with `gemini`:
+frameworks. Since we wrote it, we tend to test with `gemini`.
+
+From the `FrameworkBenchmarks` directory run:
 
 ```bash
-toolset/run-tests.py --mode verify --test gemini
+./toolset/run-tests.py --mode verify --test gemini
 ```
 
 You can find the results for this verification step under the directory:
