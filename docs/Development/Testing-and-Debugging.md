@@ -5,7 +5,7 @@
 You can easily list all available tests
 
 ```bash
-$ toolset/run-tests.py --list-tests
+$ tfb --list-tests
 activeweb
 activeweb-raw
 aspnet
@@ -23,21 +23,21 @@ There are a number of options that can be specified:
 
 ```bash
 # Run a verification for test beego
-$ toolset/run-tests.py --test beego --mode verify
+$ tfb --test beego --mode verify
 
 # Run the default benchmark for the beego test
-$ toolset/run-tests.py --test beego
+$ tfb --test beego
 
 # Specify which test types are run during benchmark
-$ toolset/run-tests.py --test beego --type json
-$ toolset/run-tests.py --test beego --type db
-$ toolset/run-tests.py --test beego --type fortune
+$ tfb --test beego --type json
+$ tfb --test beego --type db
+$ tfb --test beego --type fortune
 
 # Specify a number of options for how the load is generated
-$ toolset/run-tests.py --test beego --max-concurrency 24 --max-threads 24 --duration 20 --max-queries 200
+$ tfb --test beego --max-concurrency 24 --max-threads 24 --duration 20 --max-queries 200
 
 # Run a tiny benchmark
-$ toolset/run-tests.py --test beego --max-threads 2 --max-concurrency 2 
+$ tfb --test beego --max-threads 2 --max-concurrency 2 
 ```
 _Note: The `results` directory must be removed after each test has been run 
 in order to run the test again._
