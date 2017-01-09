@@ -90,32 +90,6 @@ exit
 # Back on initial ssh connection to server machine
 ```
 
-Last, the benchmarks require that every framework test be run under a different
-user than the one who executes the `run-tests.py` script. Creating a `runner_user` named "testrunner" is simple:
-
-```bash
-# Change this value to whatever username you want
-export RUNNER=testrunner
-# Get your primary user
-export ME=$(id -u -n)
-# Create the new testrunner user
-sudo useradd $RUNNER
-# Give him a home dir
-sudo mkdir /home/$RUNNER
-# Make testrunner the owner of his home dir
-sudo chown $RUNNER:$RUNNER /home/$RUNNER
-# Add the testrunner user to every group that the travis user is in
-sudo sed -i 's|:'"$ME"'|:'"$ME"','"$RUNNER"'|g' /etc/group
-# Add the testrunner user to the travis group specifically
-sudo sed -i 's|'"$ME"':x:\(.*\):|'"$ME"':x:\1:'"$RUNNER"'|g' /etc/group
-# Add the travis user to the testrunner group
-sudo sed -i 's|'"$RUNNER"':x:\(.*\):|'"$RUNNER"':x:\1:'"$ME"'|g' /etc/group
-# Add testrunner to the sudoers group
-echo "$RUNNER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-# Set the default shell for testrunner to /bin/bash
-sudo sed -i 's|/home/'"$RUNNER"':.*|/home/'"$RUNNER"':/bin/bash|g' /etc/passwd
-```
-
 **Setting up prerequisites**
 
 The suite requires that a few libraries and applications are installed in order to run.
@@ -143,7 +117,6 @@ You will need to change, at a minimum, the following:
 * `client_host` Set this to the IP address of your client machine
 * `client_identity_file` Set to `/home/[username]/.ssh/id_rsa`
 * `client_user` Set to your username
-* `runner_user` Set to your runner's username
 * `database_host` Set this to the IP address of your database machine
 * `database_identity_file` Set to `/home/[username]/.ssh/id_rsa`
 * `database_user` Set to your username
