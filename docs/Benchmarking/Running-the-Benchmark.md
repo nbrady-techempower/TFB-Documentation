@@ -14,8 +14,8 @@ yielding references such as these:
 [article 3](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)), and on every computer 
 you will need to have passwordless sudo access 
 ([Google for help](https://www.google.com/#hl=en&q=passwordless%20sudo)).
-Once you have cloned our repository, run `toolset/run-tests.py --help` for detailed help
-on running in _benchmark_ mode. 
+Once you have cloned our repository, run `tfb --help` for detailed help
+on running in _benchmark_ mode.
 
 If you wish to benchmark on Amazon EC2, see
 [our scripts](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/deployment/vagrant-production)

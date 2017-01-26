@@ -138,7 +138,7 @@ frameworks. Since we wrote it, we tend to test with `gemini`.
 From the `FrameworkBenchmarks` directory run:
 
 ```bash
-./toolset/run-tests.py --mode verify --test gemini
+tfb --mode verify --test gemini
 ```
 
 You can find the results for this verification step under the directory:
@@ -187,7 +187,7 @@ $ vagrant up
 # Enter the VM, then run a test
 $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
-vagrant@TFB-all:~/FrameworkBenchmarks$ toolset/run-tests.py --mode verify --test gemini
+vagrant@TFB-all:~/FrameworkBenchmarks$ tfb --mode verify --test gemini
 # For non-Windows users only (will break Windows environments):
 # If the local version of your code does not mirror the code in your virtual machine, then run the following:
 # Note: the following lines must be run each time "vagrant up" is run, even after "vagrant halt"

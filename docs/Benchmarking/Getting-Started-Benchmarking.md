@@ -153,7 +153,7 @@ yielding references such as these:
 [article 3](https://help.ubuntu.com/community/SSH/OpenSSH/Keys))
 2. Enable passwordless sudo access ([Google for help](https://www.google.com/#hl=en&q=passwordless%20sudo)).
 
-After this, clone our repository and run `toolset/run-tests.py --help` for 
+After this, clone our repository and run `tfb --help` for 
 detailed guidance. You can also refer to the 
 [Benchmark Suite Setup section](#benchmark-suite-setup) for more information. 
 

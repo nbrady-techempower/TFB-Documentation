@@ -158,8 +158,8 @@ Here is an example `benchmark_config.json` from the `Compojure` framework. There
     }
 
 * `framework:` Specifies the framework name, which is used when the tests are run and within TFB. 
-This allows you to call the default test with `toolset/run-tests.py --mode verify --test compojure`, 
-or call the other test with `toolset/run-tests.py --mode verify --test compojure-raw`.
+This allows you to call the default test with `tfb --mode verify --test compojure`, 
+or call the other test with `tfb --mode verify --test compojure-raw`.
 * `tests:` A list of tests that can be run for this framework. In many cases, this contains a single element for the "default" test, but additional tests can be specified.  Each test name must be unique when concatenated with the framework name. Each test will be run separately in our Rounds, so it is to your benefit to provide multiple variations in case one works better in some cases.
   * `setup_file:` The location of the [python setup file](#setup-file) that can start and stop the test, excluding the `.py` ending. If your different tests require different setup approachs, use another setup file. 
   * `json_url (optional):` The URI to the JSON test, typically `/json`
