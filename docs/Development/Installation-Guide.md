@@ -114,13 +114,10 @@ vim benchmark.cfg
 
 You will need to change, at a minimum, the following:
 
-* `client_host` Set this to the IP address of your client machine
 * `client_identity_file` Set to `/home/[username]/.ssh/id_rsa`
 * `client_user` Set to your username
-* `database_host` Set this to the IP address of your database machine
 * `database_identity_file` Set to `/home/[username]/.ssh/id_rsa`
 * `database_user` Set to your username
-* `server_host` Set this to the IP address of your server machine
 
 Now in your `/etc/hosts` file add the following lines, replacing `127.0.0.1` with the appropriate IPs:
 
