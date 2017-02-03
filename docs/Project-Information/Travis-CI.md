@@ -41,8 +41,6 @@ Each time someone pushes new commits to master (or to a pull request), a new *bu
 
 **Use your own Travis Queue**: We cannot stress this enough. Your own queue will help you work 10x faster, and it's easy to setup. Just go to travis-ci.org, click log in with Github, and enable Travis-CI on your fork of TFB. 
 
-**Branch, and remove Lines from `.travis.yml`**: Do your work on a git branch, and the first commit can modify `.travis.yml` to remove any lines that you are not interested in. Be sure to name this commit something like `DO NOT MERGE` to remind you that you should do a `git rebase --interactive` and delete that commit before you do a pull request. 
-
 **Use the Travis-CI Command Line to Quickly Cancel Jobs**: Travis has a ruby command line. After you install it and log into your Github account, you can do something like this: 
 
     $ for i in {21..124}
