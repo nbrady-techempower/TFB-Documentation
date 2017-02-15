@@ -174,24 +174,25 @@ And that should do it!
 
 The simplest way to begin development is to set up [vagrant](https://www.vagrantup.com/). 
 
-Here's a short example: 
+## Attention Windows Users
+
+Because this setup uses file sharing between your host machine and the virtual machine, you will need to do the following to make sure this works properly.
+
+  * **Before** you clone the repo, you will need to make sure that you set autoclrf to input in git. `git config --global core.autocrlf input` or edit your git config file directly.
+  * Make sure that any editors you use save files with unix style line endings. See: [IntelliJ](https://www.jetbrains.com/help/idea/2016.3/configuring-line-separators.html), [Eclipse](http://stackoverflow.com/questions/1886185/eclipse-and-windows-newlines), [Sublime Text 3](https://medium.com/@Rascle/fix-line-endings-in-sublime-text-3-35d926d1c041#.2gemuy5of)
+  * Finally, make sure the shell you do `vagrant up` and `vagrant ssh` from is run with Administrator privileges otherwise some frameworks will fail.
+  
+## Bringing up the Vagrant VM
     
 ```bash
 # Clone the project, then move into the right directory 
-$ cd ~/FrameworkBenchmarks/deployment/vagrant-development
+$ cd ~/FrameworkBenchmarks/deployment/vagrant
 # Turn on the VM. Takes at least 20 minutes
 $ vagrant up
 # Enter the VM, then run a test
 $ vagrant ssh
 vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
 vagrant@TFB-all:~/FrameworkBenchmarks$ tfb --mode verify --test gemini
-# For non-Windows users only (will break Windows environments):
-# If the local version of your code does not mirror the code in your virtual machine, then run the following:
-# Note: the following lines must be run each time "vagrant up" is run, even after "vagrant halt"
-vagrant@TFB-all:~/FrameworkBenchmarks$ sudo mount.vboxsf -o uid=1000,gid=1000 FrameworkBenchmarks ~/FrameworkBenchmarks
-vagrant@TFB-all:~/FrameworkBenchmarks$ mkdir -p /tmp/TFB_installs
-vagrant@TFB-all:~/FrameworkBenchmarks$ mkdir -p ~/FrameworkBenchmarks/installs
-vagrant@TFB-all:~/FrameworkBenchmarks$ sudo mount -o bind /tmp/TFB_installs ~/FrameworkBenchmarks/installs
 ```
 
 ## Vagrant Snapshots
