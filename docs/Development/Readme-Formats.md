@@ -1,11 +1,11 @@
-# Langauge READMEs
+# Language READMEs
 
 The language READMEs can be found under 
-FrameworkBenchmarks/frameworks/{language}. There should be only one 
+FrameworkBenchmarks/frameworks/{language}. There should only be one 
 README per language.
 
 Listed below are some basic section suggestions for READMEs for languages. 
-While they all aren't required, it's ideal to complete as much of the 
+While they aren't all required, it's ideal to complete as much of the 
 README as possible. Feel free to add any additional information as well.
 
 1. Infrastructure Software Versions (if most/all frameworks use the same install)
@@ -27,8 +27,8 @@ __Example:__ [Python](https://github.com/TechEmpower/FrameworkBenchmarks/tree/ma
 # Framework READMEs
 
 The framework READMEs can be found under 
-FrameworkBenchmarks/frameworks/{language}/{framework}. There should be 
-only one README per framework.
+FrameworkBenchmarks/frameworks/{language}/{framework}. There should only be one
+README per framework.
 
 Listed below are some basic section suggestions for READMEs for 
 frameworks. While they all aren't required, it's ideal to complete as much 
