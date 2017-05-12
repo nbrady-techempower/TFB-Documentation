@@ -12,6 +12,7 @@ Each test type has their own requirements and specifications. Visit their sectio
 4. [__Fortunes__](#fortunes): Exercises the ORM, database connectivity, dynamic-size collections, sorting, server-side templates, XSS countermeasures, and character encoding.
 5. [__Database Updates__](#database-updates): A variation of [Test #3](#multiple-database-queries) that exercises the ORM's persistence of objects and the database driver's performance at running `UPDATE` statements or similar. The spirit of this test is to exercise a variable number of read-then-write style database operations.
 6. [__Plaintext__](#plaintext): An exercise of the request-routing fundamentals only, designed to demonstrate the capacity of high-performance platforms in particular. Requests will be sent using HTTP pipelining. The response payload is still small, meaning good performance is still necessary in order to saturate the gigabit Ethernet of the test environment.
+7. [__Caching__](#caching): Exercises the platform or framework's in-memory caching of information sourced from a database.  For implementation simplicity, the requirements are very similar to the multiple database query test ([Test #3](#multiple-database-queries)), but use a separate database table and are fairly generous/forgiving, allowing for each platform or framework's best practices to be applied.
 
 #General Test Requirements
 
@@ -214,7 +215,7 @@ The following requirements apply to all test types below.
         Server: Example
         Date: Wed, 17 Apr 2013 12:00:00 GMT
 
-        <!DOCTYPE html><html><head><title>Fortunes</title></head><body><table><tr><th>id</th><th>message</th></tr><tr><td>11</td><td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td></tr><tr><td>4</td><td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td></tr><tr><td>5</td><td>A computer program does what you tell it to do, not what you want it to do.</td></tr><tr><td>2</td><td>A computer scientist is someone who fixes things that aren&apos;t broken.</td></tr><tr><td>8</td><td>A list is only as strong as its weakest link. — Donald Knuth</td></tr><tr><td>0</td><td>Additional fortune added at request time.</td></tr><tr><td>3</td><td>After enough decimal places, nobody gives a damn.</td></tr><tr><td>7</td><td>Any program that runs right is obsolete.</td></tr><tr><td>10</td><td>Computers make very fast, very accurate mistakes.</td></tr><tr><td>6</td><td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td></tr><tr><td>9</td><td>Feature: A bug with seniority.</td></tr><tr><td>1</td><td>fortune: No such file or directory</td></tr><tr><td>12</td><td>フレームワークのベンチマーク</td></tr></table></body></html>
+        <!DOCTYPE html><html><head><title>Fortunes</title></head><body><table><tr><th>id</th><th>message</th></tr><tr><td>11</td><td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td></tr><tr><td>4</td><td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td></tr><tr><td>5</td><td>A computer program does what you tell it to do, not what you want it to do.</td></tr><tr><td>2</td><td>A computer scientist is someone who fixes things that aren&apos;t broken.</td></tr><tr><td>8</td><td>A list is only as strong as its weakest link. — Donald Knuth</td></tr><tr><td>0</td><td>Additional fortune added at request time.</td></tr><tr><td>3</td><td>After enough decimal places, nobody gives a damn.</td></tr><tr><td>7</td><td>Any program that runs right is obsolete.</td></tr><tr><td>10</td><td>Computers make very fast, very accurate mistakes.</td></tr><tr><td>6</td><td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td></tr><tr><td>9</td><td>Feature: A bug with seniority.</td></tr><tr><td>1</td><td>fortune: No such file or directory</td></tr><tr><td>12</td><td>??????????????</td></tr></table></body></html>
 
     ###Minimum template
 
@@ -326,3 +327,58 @@ The following requirements apply to all test types below.
         Date: Wed, 17 Apr 2013 12:00:00 GMT
         
         Hello, World!
+
+7. ##Caching (Work in progress)
+
+    The __Caching__ test exercises the preferred in-memory or separate-process caching technology for the platform or framework.  For implementation simplicity, the requirements are very similar to the multiple database-query test [Test #3](#multiple-database-queries), but use a separate database table.  The requirements are quite generous, affording each framework fairly broad freedom to meet the requirements in the manner that best represents the canonical non-distributed caching approach for the framework.  (Note: a distributed caching test type could be added later.)
+    
+    This test type is a work-in-progress and may evolve in ways that break implementations.  Early implementations are acceptable but not yet encouraged.
+
+    ###Requirements
+
+    In addition to the requirements listed below, please note the [general requirements](#general-test-requirements) that apply to all implemented tests.  Also see [Test #3](#multiple-database-queries) since this test type mimics that quite closely, and has identical inputs and outputs from the perspective of the HTTP client.
+
+    1. For every request, an integer query string parameter named `count` must be retrieved from the request. The parameter specifies the number of cached objects to retrieve in preparing the HTTP response (see below).
+    2. The recommended URI is __/cached-worlds__. _Note: Whether there is an actual request parameter named `count` is not important. The url should best reflect the practices of the particular framework. So, both "/cached-worlds?count=" and "/cached-worlds/" are valid paths._
+    3. The `count` parameter must be bounded to between 1 and 500. If the parameter is missing, is not an integer, or is an integer less than 1, the value should be interpreted as 1; if greater than 500, the value should be interpreted as __500__.
+    4. The request handler must retrieve a set of __CachedWorld__ objects, equal in count to the `count` parameter, from the __CachedWorld__ database table.  Note that the __CachedWorld__ database table uses a schema idential to the __World__ table used for [Test #3](#multiple-database-queries) but is distinct to avoid confusion.
+    5. Each object must be selected randomly from the available pool of __CachedWorld__ objects.  As with [Test #2](#single-database-query), it is acceptable for implementations to leverage the knowledge that the identities of these objects span from 1 to 10,000.
+    6. Unlike [Test #3](#multiple-database-queries), this test type has no requirement that implementations make requests to an external service.  Additionally, if a separate caching process is used (see below), it is _acceptable_ to fetch all of the randomly-selected objects using a single cache query operation.
+    7. The implementation may use any caching library or approach desired, with the following caveats.
+       a. Reverse-proxy caching is not permitted. This project is expressly not a test of reverse-proxy caches (such as Varnish or nginx caching).
+       b. The implementation should use a bona-fide cache library or server with features such as read-through, a replacement algorithm, and so on. Implementations should not create a plain key-value map of objects. If the platform or framework does not ship with a canonical caching capability, use a caching library or separate-process caching server that is realistic for a production environment. A "reference implementation" would use Google's Guava CacheBuilder for in-VM or Redis for separate-process caching.
+       c. The implementation may use an in-process memory cache, a separate-process memory cache, or any other conceivable approach (within reasonable limits, of course).  As feasible, use the approach that is considered canonical for the framework.
+    8. The implementation must not require an additional server instance or additional hardware. The cache should run alongside the application server (either in-process or separate process on localhost).
+    9. The application server must communicate with the cache; the implementation should not expect that the HTTP client communicate with the cache directly.
+    10. As with other test types, a warm-up will occur prior to capturing performance data. However, it is also acceptable for an implementations to prime its cache during setup in whatever form needed, assuming that priming process completes in a reasonable amount of time.
+    7. Each __CachedWorld__ object retrieved from the cache must be added to a list or array.
+    8. The list or array must be serialized to JSON and sent as a response.
+    9. The response content type must be set to `application/json`.
+    10. The response headers must include either `Content-Length` or `Transfer-Encoding`.
+    11. The response headers must include `Server` and `Date`.
+    14. gzip compression is not permitted.
+    15. Server support for HTTP Keep-Alive is strongly encouraged but not required.
+    16. If HTTP Keep-Alive is enabled, no maximum Keep-Alive timeout is specified by this test.
+    17. The request handler will be exercised at 256 concurrency only.
+    18. The request handler will be exercised with `counts` of 1, 10, 20, 50, and 100.  Note that these are higher than the counts used in [Test #3](#multiple-database-queries).
+    19. The request handler will be exercised using GET requests.
+
+    ###Example request
+
+        GET /cached-worlds?count=10 HTTP/1.1
+        Host: server
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64) Gecko/20130501 Firefox/30.0 AppleWebKit/600.00 Chrome/30.0.0000.0 Trident/10.0 Safari/600.00
+        Cookie: uid=12345678901234567890; __utma=1.1234567890.1234567890.1234567890.1234567890.12; wd=2560x1600
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-US,en;q=0.5
+        Connection: keep-alive
+
+    ###Example response
+
+        HTTP/1.1 200 OK
+        Content-Length: 315
+        Content-Type: application/json; charset=UTF-8
+        Server: Example
+        Date: Wed, 17 Apr 2013 12:00:00 GMT
+        
+        [{"id":4174,"randomNumber":331},{"id":51,"randomNumber":6544},{"id":4462,"randomNumber":952},{"id":2221,"randomNumber":532},{"id":9276,"randomNumber":3097},{"id":3056,"randomNumber":7293},{"id":6964,"randomNumber":620},{"id":675,"randomNumber":6601},{"id":8414,"randomNumber":6569},{"id":2753,"randomNumber":4065}]
