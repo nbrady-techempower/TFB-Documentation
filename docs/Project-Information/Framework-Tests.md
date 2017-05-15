@@ -252,20 +252,21 @@ The following requirements apply to all test types below.
     8. Each __World__ object must be persisted to the database with its new `randomNumber` value.
     9. Use of batch updates is acceptable but not required.  To be clear: batches are not permissible for selecting/reading the rows, but batches are acceptable for writing the updates.
     10. Use of transactions is acceptable but not required. If transactions are used, a transaction should only encapsulate a single iteration, composed of a single read and single write. Transactions should not be used to consolidate multiple iterations into a single operation.
-    11. For raw tests (that is, tests without an ORM), each updated row must receive a unique new `randomNumber` value. It is not acceptable to change the `randomNumber` value of all rows to the same random number using an `UPDATE ... WHERE id IN (...)` clause.
-    12. Each __World__ object must be added to a list or array.
-    13. The list or array must be serialized to JSON and sent as a response.
-    14. The response content type must be set to `application/json`.
-    15. The response headers must include either `Content-Length` or `Transfer-Encoding`.
-    16. The response headers must include `Server` and `Date`.
-    17. Use of an in-memory cache of __World__ objects or rows by the application is not permitted.
-    18. Use of prepared statements for SQL database tests (e.g., for MySQL) is encouraged but not required.
-    19. gzip compression is not permitted.
-    20. Server support for HTTP Keep-Alive is strongly encouraged but not required.
-    21. If HTTP Keep-Alive is enabled, no maximum Keep-Alive timeout is specified by this test.
-    22. The request handler will be exercised at 256 concurrency only.
-    23. The request handler will be exercised with query counts of 1, 5, 10, 15, and 20.
-    24. The request handler will be exercised using GET requests.
+    11. All updates should be executed prior to generating the HTTP response.
+    12. For raw tests (that is, tests without an ORM), each updated row must receive a unique new `randomNumber` value. It is not acceptable to change the `randomNumber` value of all rows to the same random number using an `UPDATE ... WHERE id IN (...)` clause.
+    13. Each __World__ object must be added to a list or array.
+    14. The list or array must be serialized to JSON and sent as a response.
+    15. The response content type must be set to `application/json`.
+    16. The response headers must include either `Content-Length` or `Transfer-Encoding`.
+    17. The response headers must include `Server` and `Date`.
+    18. Use of an in-memory cache of __World__ objects or rows by the application is not permitted.
+    19. Use of prepared statements for SQL database tests (e.g., for MySQL) is encouraged but not required.
+    20. gzip compression is not permitted.
+    21. Server support for HTTP Keep-Alive is strongly encouraged but not required.
+    22. If HTTP Keep-Alive is enabled, no maximum Keep-Alive timeout is specified by this test.
+    23. The request handler will be exercised at 256 concurrency only.
+    24. The request handler will be exercised with query counts of 1, 5, 10, 15, and 20.
+    25. The request handler will be exercised using GET requests.
 
     ###Example request
 
