@@ -6,11 +6,21 @@ For this project, we aimed to configure every framework according to the best pr
 For language and framework specific details, view their README within their respective [directory](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks).
 
 ##Hardware
-* [ServerCentral](https://www.servercentral.com/): Dell R910 (4x 10-Core E7-4850 CPUs) application server; Dell R710 (2x 4-Core E5520 CPUs) database server; switched 10-gigabit Ethernet
-* [Azure](https://azure.microsoft.com): Cloud environment, Microsoft Azure D3v2 instances; switched gigabit Ethernet
-* [Peak](http://www.peakhosting.com/): Dell R720xd dual Xeon E5-2660 v2 servers with 32 GB memory; database servers equipped with SSDs in RAID; switched 10-gigabit Ethernet
-* [EC2](https://aws.amazon.com/ec2/): Amazon EC2 c3.large instances; switched gigabit Ethernet
+* [ServerCentral](https://www.servercentral.com/)
+  * Switched 10-gigabit ethernet
 
+  __TFB-server (App server)__
+  * 80 Cores Intel(R) Xeon(R) CPU E7-4850  @ 2.00GHz
+  * 512gb RAM
+
+  __TFB-database__
+  * 16 Cores Intel(R) Xeon(R) CPU E5520  @ 2.27GHz
+  * 16gb RAM
+  
+  __TFB-client (wrk machine)__
+  * 8 Cores Intel(R) Xeon(R) CPU E5-2407 0 @ 2.20GHz
+  * 32gb RAM
+  
 ##Operating Systems
 * [Ubuntu Linux](http://www.ubuntu.com/desktop) 14.04 64-bit
 
