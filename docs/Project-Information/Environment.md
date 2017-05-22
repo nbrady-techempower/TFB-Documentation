@@ -6,18 +6,19 @@ For this project, we aimed to configure every framework according to the best pr
 For language and framework specific details, view their README within their respective [directory](https://github.com/TechEmpower/FrameworkBenchmarks/tree/master/frameworks).
 
 ##Hardware
-* [ServerCentral](https://www.servercentral.com/)
+
+### _[ServerCentral](https://www.servercentral.com/)_
   * Switched 10-gigabit ethernet
 
-  __TFB-server (App server)__
+  #### TFB-server (App server)
   * 80 Cores Intel(R) Xeon(R) CPU E7-4850  @ 2.00GHz
   * 512gb RAM
 
-  __TFB-database__
+  #### TFB-database
   * 16 Cores Intel(R) Xeon(R) CPU E5520  @ 2.27GHz
   * 16gb RAM
   
-  __TFB-client (wrk machine)__
+  #### TFB-client (wrk machine)
   * 8 Cores Intel(R) Xeon(R) CPU E5-2407 0 @ 2.20GHz
   * 32gb RAM
   
