@@ -25,6 +25,9 @@ There are a number of options that can be specified:
 # Run a verification for test beego
 $ tfb --test beego --mode verify
 
+# Run a test in debug mode, which skips verification and leaves the server up for testing endpoints
+$ tfb --test beego --mode debug
+
 # Run the default benchmark for the beego test
 $ tfb --test beego
 
@@ -33,11 +36,6 @@ $ tfb --test beego --type json
 $ tfb --test beego --type db
 $ tfb --test beego --type fortune
 
-# Specify a number of options for how the load is generated
-$ tfb --test beego --max-concurrency 24 --max-threads 24 --duration 20 --max-queries 200
-
-# Run a tiny benchmark
-$ tfb --test beego --max-threads 2 --max-concurrency 2 
 ```
 _Note: The `results` directory must be removed after each test has been run 
 in order to run the test again._
