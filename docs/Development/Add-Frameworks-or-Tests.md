@@ -1,3 +1,15 @@
+### Adding a New Test
+
+To create a new framework you can start the new test initialization wizard with the command:
+
+```
+tfb --new
+```
+
+This will walk you through the scaffolding process. You will still need to follow the steps in [Additional Information](#additional-information) below.
+
+### Adding a New Test Without the Installation Wizard
+
 When adding a new framework or new test to an existing framework, please follow 
 these steps:
 
@@ -11,6 +23,9 @@ inside the `config/` folder if you need to see the database schema.
 framework.
 * Add/Update a [README](Readme-Formats#framework-readmes) for your
 language.
+
+### Additional Information
+
 * Make sure that *any* packages/dependencies you are using or any git source repositories you are pulling in are locked down to specific version numbers or releases.
 * Add an entry for the framework test directory in `.travis.yml` if the framework is new to the benchmarks.
 * [Test your framework](Testing-and-Debugging) appropriately.
