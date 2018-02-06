@@ -251,7 +251,7 @@ The following requirements apply to all test types below.
     7. Each __World__ object must have its `randomNumber` field updated to a new random integer between 1 and 10000.
     8. Each __World__ object must be persisted to the database with its new `randomNumber` value.
     9. Use of batch updates is acceptable but not required.  To be clear: batches are not permissible for selecting/reading the rows, but batches are acceptable for writing the updates.
-    10. Use of transactions is acceptable but not required. If transactions are used, a transaction should only encapsulate a single iteration, composed of a single read and single write. Transactions should not be used to consolidate multiple iterations into a single operation.
+    10. Use of transactions is acceptable.
     11. All updates should be executed prior to generating the HTTP response.
     12. For raw tests (that is, tests without an ORM), each updated row must receive a unique new `randomNumber` value. It is not acceptable to change the `randomNumber` value of all rows to the same random number using an `UPDATE ... WHERE id IN (...)` clause.
     13. Each __World__ object must be added to a list or array.
