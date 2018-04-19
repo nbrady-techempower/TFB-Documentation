@@ -4,11 +4,7 @@ Here are the relevant pieces of TFB's file structure:
 
 * .github/
     * PULL_REQUEST_TEMPLATE.md
-* [config/](#config)
-    * cassandra/
-    * elasticsearch/
 * [deployment/](#deployment)
-    * azure/
     * vagrant-development/
     * etc...
 * [frameworks/](#frameworks)
@@ -17,7 +13,7 @@ Here are the relevant pieces of TFB's file structure:
         * dropwizard/
             * [README.md](#framework-readmemd)
             * [benchmark_config.json (Framework Specific File)](#framework-specific-files)
-            * [setup.sh (Framework Specific File)](#framework-specific-files)
+            * [dropwizard.dockerfile (Framework Specific File)](#framework-specific-files)
             * [source_code](#source-code-file)
             * etc...
         * gemini/
@@ -28,23 +24,16 @@ Here are the relevant pieces of TFB's file structure:
     * [benchmark/](#benchmark)
         * benchmarker.py
         * framework_test.py
-    * [setup/](#setup)
-        * linux/
-            * [frameworks/ (Installation Scripts Directories)](#installation-script-directories)
-            * [languages/ (Installation Scripts Directories)](#installation-script-directories)
-            * [systools/ (Installation Scripts Directories)](#installation-script-directories)
-            * [webservers/ (Installation Scripts Directories)](#installation-script-directories)
-            * [installer.py](#installerpy)
-        * sqlserver/
-        * windows/
-    * [test/](#test)
+    * [continuous/](#continuous)
+    * [databases/](#databases)
+    * [scaffolding/](#scaffolding)
     * [travis/](#travis)
+    * [utils/](#utils)
+    * [wrk/](#wrk)
 * [.travis.yml](#travisyml)
 * [benchmark.cgf(.example)](#benchmarkcfg)
 
-### config/
 
-Configuration files for various languages, databases, and servers.
 
 ### deployment/
 
@@ -86,11 +75,11 @@ for a more detailed guide.
 #### Framework Specific Files
 
 Most of the files are framework specific and you can find more 
-information within their individual READMEs. However, there are three 
+information within their individual READMEs. However, there are two 
 files that are required by the TFB suite. These are:
 
 * benchmark_config.json
-* setup.sh
+* [test-name].dockerfile
 
 See the section on [Framework Specific Files](Framework-Files) 
 for more information.
@@ -136,41 +125,31 @@ This directory contains files that implement or support the benchmark feature:
 These files are not meant for you to run directly. For instructions on running the 
 benchmark, please refer to the [benchmarking section](../Benchmarking).
 
-#### setup/
+#### continuous/
 
-This directory contains scripts to install the benchmark suite on adequately 
-provisioned hosts. It is composed of these directories:
+This directory contains the files required to run our continuous benchmarking.
 
-* linux: Scripts to setup the Linux server and the Linux client and database server.
-* sqlserver: Scripts to setup the SQL Server database server.
-* windows: Scripts to setup the Windows server.
+#### databases/
 
-##### Installation Script Directories
+This directory contains the configuration and dockerfiles for the databases we support.
 
-These directories help organize the installation scripts into four 
-cagegories (frameworks, languages, systools, and webservers), 
-which are called by [`installer.py`](#installerpy) when tests are run. 
-Visit the [installation script section](../Development/Add-Benchmark-Scripts#installation-scripts) 
-for guidelines on writing an installation script.
+#### scaffolding/
 
-#### test/
-
-Script for [Travis-CI](../Project-Information/Travis-CI).
+This directory contains a script for quickly bootstrapping a new framework test.
 
 #### travis/
 
-Folder specifically for travis scripts.
+This directory is specifically for travis scripts.
+
+#### utils/
+
+This directory contains a set of helper utilities used by our benchmarking tool.
 
 ### .travis.yml
 
 Provides Travis-CI with the relevant information to test TFB. See the 
 [Travis-CI](../Project-Information/Travis-CI) section for more information.
 
-### benchmark.cfg
-
-This file sets up user/environment specific information that TFB needs to 
-know in order to properly run framework tests. See the 
-[Configuration File section](Configuration-File) for more information.
 
 # Contents
 
@@ -178,4 +157,3 @@ know in order to properly run framework tests. See the
 |:---- |:------- |
 [Configuration File](Configuration-File) | Configures set up specifications specific to each user and system.
 [Framework Specific Files](Framework-Files) | Files specific to each individual framework for use with the benchmarking suite.
-[Summary of Script Directories](Summary-of-Script-Directories) | Guide to directories that assist with scripts for setting up different environments.

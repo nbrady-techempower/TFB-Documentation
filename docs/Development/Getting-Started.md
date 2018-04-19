@@ -9,11 +9,9 @@ This is the getting started guide for __development__. If you're interested in _
     * [Click here for the guide to get your development environment set up.](Installation-Guide) *Note: We provide [scripts](../Codebase/Summary-of-Script-Directories) for configuring a Linux development environment using either Virtualbox or Amazon EC2, and are actively searching for help adding Windows.*
 3. __Enable Travis-CI__
     * [Enable Travis-CI](Testing-and-Debugging#travis-ci) on your project fork, so that any commits you send to Github are automatically verified for correctness (e.g. meeting all [benchmark requirements](../Project-Information/Framework-Tests#requirements)).
-4. __Configure Your Environment__
-    * Create a [benchmark.cfg file](../Codebase/Configuration-File), which is the benchmark.cfg.example with your specific configurations.
-5. __Run a Test__
+4. __Run a Test__
     * `tfb --mode verify --test ${your-test-here}` - to verify that your test works.
     * `tfb --mode debug --test ${your-test-here}` - will just spin up your server, allowing you time to debug the endpoints.
-6. __Clean Up__
+5. __Clean Up__
     * Remove the __contents of /FrameworkBenchmarks/installs/__ if you'd like to re-install the framework dependencies. 
       - You can remove the __results/__ and __installs__ directories by adding the `--clean-all` option to the `run-tests.py` command

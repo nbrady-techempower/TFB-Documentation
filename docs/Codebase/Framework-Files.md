@@ -4,101 +4,10 @@ specific and unique to each framework.
 
 | File | Summary |
 |:---- |:------- |
-[Setup File](#setup-file) | Installs the framework and its dependencies, configures the framework to the correct database hosts, package framework code, and starts the framework.
 [Benchmark Config File](#benchmark-config-file) | Defines test instructions and metadata for the framework benchmarks program.
+[Test Docker Files](#test-docker-file) | Creates a docker container that installs the test and runs the framework's server.
 
-# Available Bash Variables 
 
-Because it is a bash script, `setup.sh` has these bash variables available:
-
-* FWROOT: Root of project
-* IROOT: Root of installation for the current framework
-* TROOT: Root directory for the current framework 
-
-# Setup File
-
-The setup file is responsible for installing the framework software and starting the test.
-This script is responsible for (among other things):
-
-* Installing any software or tools needed by the framework
-* Modifying the framework's configuration to point to the correct database host
-* Compiling and/or packaging the code
-* Starting the server
-
-The setup file is a shell script that should build the source, make any necessary changes 
-to the framework's configuration, and then start the server.
-
-__Installing system software__
-
-Typically, the first thing done is to call `fw_depends` 
-to run installations for any necessary software that TFB has already 
-created installation scripts for. TFB provides a reasonably wide range of 
-core software, so your `setup.sh` may only need to call `fw_depends` to acquire the 
-tools it needs. You are also free to add install scripts to the `toolset/setup/linux`  
-directory if a tool does not already exist.
-
-To see what TFB provides installations for, look in `toolset/setup/linux`
-in the folders `frameworks`, `languages`, `systools`, and `webservers`. 
-You should pass the filename, without the ".sh" extension, to fw_depends. 
-
-Note: `fw_depends` does not guarantee dependency management, so 
-list software in the proper order e.g. if `foo` depends on `bar`
-use `fw_depends bar foo`.
-
-Here are some examples of installing software using `fw_depends`:
-
-```bash
-#!/bin/bash
-
-# My framework only needs nodejs
-fw_depends nodejs
-```
-
-```bash
-#!/bin/bash
-
-# My framework needs composer and php7, but since composer depends on php7, I should require php7 first
-fw_depends php7 composer
-```
-
-__Configuring database connectivity__
-
-By convention, the configuration files used by a framework should specify the database 
-server as `localhost` so that developing tests in a single-machine environment can be 
-done in an ad hoc fashion, without using the benchmark scripts.
-
-When running a benchmark script, the script needs to modify each framework's configuration
-so that the framework connects to a database host provided as a command line argument. 
-In order to do this, use stream editor (`sed`) to make modifications prior to 
-starting the server.
-
-For example (Java's Wicket Framework):
-
-```bash
-sed -i 's|mysql://.*:3306|mysql://'"${DBHOST}"':3306|g' src/main/webapp/WEB-INF/resin-web.xml
-```
-
-Note: `args` contains a number of useful items, such as `troot`, `iroot`, `fwroot` (comparable
-to their bash counterparts in `setup.sh`, `database_host`, `client_host`, and many others)
-
-Note: Using `localhost` in the raw configuration file is not a requirement as long as the
-`sed` call properly injects the database host provided to the benchmark toolset as a command 
-line argument.
-
-__A full example__
-
-Here is an example of Wicket's setup file.
-
-```bash
-#!/bin/bash
-
-sed -i 's|mysql://.*:3306|mysql://'"${DBHOST}"':3306|g' src/main/webapp/WEB-INF/resin-web.xml
-
-mvn clean compile war:war
-rm -rf $RESIN_HOME/webapps/*
-cp target/hellowicket-1.0-SNAPSHOT.war $RESIN_HOME/webapps/wicket.war
-$RESIN_HOME/bin/resinctl start
-```
 # Benchmark Config File
 
 The `benchmark_config.json` file is used by our scripts to identify available tests - it should exist at the root of the framework directory.
@@ -109,7 +18,6 @@ Here is an example `benchmark_config.json` from the `Compojure` framework. There
       "framework": "compojure",
       "tests": [{
         "default": {
-          "setup_file": "setup",
           "json_url": "/compojure/json",
           "db_url": "/compojure/db",
           "query_url": "/compojure/queries/",
@@ -133,7 +41,6 @@ Here is an example `benchmark_config.json` from the `Compojure` framework. There
           "versus": "servlet"
         },
         "raw": {
-          "setup_file": "setup",
           "db_url": "/compojure/raw/db",
           "query_url": "/compojure/raw/queries/",
           "update_url": "/compojure/raw/updates/",
@@ -161,7 +68,6 @@ Here is an example `benchmark_config.json` from the `Compojure` framework. There
 This allows you to call the default test with `tfb --mode verify --test compojure`, 
 or call the other test with `tfb --mode verify --test compojure-raw`.
 * `tests:` A list of tests that can be run for this framework. In many cases, this contains a single element for the "default" test, but additional tests can be specified.  Each test name must be unique when concatenated with the framework name. Each test will be run separately in our Rounds, so it is to your benefit to provide multiple variations in case one works better in some cases.
-  * `setup_file:` The location of the [python setup file](#setup-file) that can start and stop the test, excluding the `.py` ending. If your different tests require different setup approachs, use another setup file. 
   * `json_url (optional):` The URI to the JSON test, typically `/json`
   * `db_url (optional):` The URI to the database test, typically `/db`
   * `query_url (optional):` The URI to the variable query test. The URI must be set up so that an integer can be applied to the end of the URI to specify the number of queries to run.  For example, `/query?queries=`(to yield `/query?queries=20`) or `/query/` (to yield `/query/20`)
@@ -183,3 +89,11 @@ or call the other test with `tfb --mode verify --test compojure-raw`.
   * `versus (optional):` The name of another test (elsewhere in this project) that is a subset of this framework.  This allows for the generation of the framework efficiency chart in the results web site. For example, Compojure is compared to "servlet" since Compojure is built on the Servlets platform.
 
 The [requirements section](../Project-Information/Framework-Tests#requirements) explains the expected response for each URL as well all metadata options available. 
+
+# Test Docker File
+
+In order to install the necessary components for each framework test, a dockerfile named after that test is required. Looking at the `benchmark_config.json` for `compojure` above, a dockerfile for the default test would be called `compojure.dockerfile` and exist at the root level (in this case `frameworks/Clojure/compojure/compojure.dockerfile`.) All frameworks must have a default test with a corresponding dockerfile. The next entry requires a dockerfile named `compojure-raw.dockerfile`.
+
+Each tests' dockerfile should be considered independently. The idea is that a single dockerfile should be a complete install of the framework and run the server in the foreground. If the installation process is the same between two tests, it is encouraged that the code between the two dockerfiles looks the same. Docker will make use of its internal caching system such that the second test will build much faster. 
+
+If you are unfamiliar with writing dockerfiles check out Docker's [documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#sort-multi-line-arguments). Also check out how other framework's build their dockerfiles in our [repo](https://github.com/TechEmpower/FrameworkBenchmarks).

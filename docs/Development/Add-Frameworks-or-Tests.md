@@ -13,7 +13,7 @@ This will walk you through the scaffolding process. You will still need to follo
 When adding a new framework or new test to an existing framework, please follow 
 these steps:
 
-* Add/Update a [setup file](../Codebase/Framework-Files#setup-file).
+* Add/Update a [test docker file](../Codebase/Framework-Files#test-docker-file).
 * Add/Update a [benchmark_config.json](../Codebase/Framework-Files#benchmark-config-file).
 * Implement at least one [test](../Project-Information/Framework-Tests#test-types) 
 (we'd be even happier with six completed tests). When creating a database test, 

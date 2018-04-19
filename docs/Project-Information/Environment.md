@@ -7,27 +7,27 @@ For language and framework specific details, view their README within their resp
 
 ##Hardware
 
-### _[ServerCentral](https://www.servercentral.com/)_
+### Citrine (Self-hosted)
   
   * Switched 10-gigabit ethernet
 
-  #### TFB-server (App server)
+  ##### TFB-server (App server)
   
   * 80 HT Cores Intel(R) Xeon(R) CPU E7-4850  @ 2.00GHz
   * 512gb RAM
 
-  #### TFB-database
+  ##### TFB-database
   
   * 16 HT Cores Intel(R) Xeon(R) CPU E5520  @ 2.27GHz
   * 16gb RAM
   
-  #### TFB-client (wrk machine)
+  ##### TFB-client (wrk machine)
   
   * 8 HT Cores Intel(R) Xeon(R) CPU E5-2407 0 @ 2.20GHz
   * 32gb RAM
   
 ##Operating Systems
-* [Ubuntu Linux](http://www.ubuntu.com/desktop) 14.04 64-bit
+* [Ubuntu Linux](http://www.ubuntu.com/desktop) 16.04 64-bit
 
 ##Databases
 * [MySQL](http://dev.mysql.com/)

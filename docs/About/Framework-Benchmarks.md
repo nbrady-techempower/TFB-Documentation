@@ -3,7 +3,7 @@ The __TechEmpower Framework Benchmarks__ is a project that provides representati
 _Note: We're using the word "framework" loosely to refer to platforms, micro-frameworks, and full-stack frameworks._
 
 #Results
-View the [latest results](https://www.techempower.com/benchmarks/), or check out the [previous rounds](https://www.techempower.com/benchmarks/#section=previous-rounds).
+View the [current continuous benchmarking run](https://tfb-status.techempower.com), view the [latest round's results](https://www.techempower.com/benchmarks/), or check out the [previous rounds](https://www.techempower.com/benchmarks/#section=previous-rounds).
 
 #Motivation
 Choosing a web application framework involves evaluation of many factors. While comparatively easy to measure, performance is frequently given little consideration. We hope to help change that. Application performance can be directly mapped to hosting dollars, and for companies both large and small, hosting costs can be a pain point. Weak performance can also cause premature and costly scale pain, user experience degradation, and penalties levied by search engines.
