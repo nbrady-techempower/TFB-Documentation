@@ -74,18 +74,22 @@ For example, if files inside `aspnet/` are modified as part of a pull request, t
 
 #### Travis Commit Message Hooks
 
-Travis provides a commit message hook and we've created a few more to help make dealing with Travis and the Partial vs Full Verification a little easier. You can add any of the following to your commit message when pushing to a Travis enabled repo.
+Travis provides a commit message hook and we've created a few more to help make dealing with Travis and the Partial vs Full Verification a little easier. You can add any of the following to your commit message when pushing to a Travis enabled repo. Each Travis build evaluates the most recent commit message.
 
 * `[ci skip]` - This is provided by Travis. If this is found in your commit message, Travis will not trigger at all.
-* `[ci full-run]` - This will run all the jobs despite what files have been changed.
+* `[ci run-all]` - This will run all the jobs despite what files have been changed.
 * `[ci fw <testdirs>]` - This will run the tests for the selected framework directories *in addition to* the jobs that would normally trigger from the files that have been changed. Example: `[ci fw JavaScript/express Java/gemini]`
 * `[ci fw-only <testdirs>]` - The same as above except it will *only* run these tests despite the files that have been modified. Example: `[ci fw-only JavaScript/express Java/gemini]`
+* `[ci lang <testlang>]` - This will run the tests for the selected language *in addition to* the jobs that would normally trigger from the files that have been changed. Example: `[ci lang JavaScript Java]`
+* `[ci lang-only <testlang>]` - The same as above except it will *only* run these language tests despite the files that have been modified. Example: `[ci fw-only JavaScript Java]`
+
 
 #### Running Travis in a Fork
 
 A Travis account specific to your fork of TFB is highly valuable, as you have personal limits on *workers* and can therefore see results from Travis much more quickly than you could when the Travis account for TechEmpower has a full queue awaiting verification. 
 
-#### Important Note About Travis-CI
+#### Important Notes About Travis-CI
 
 If you make changes to configuration files, or files outside your framework directory, Travis will run tests on all existing frameworks. For this reason, it may appear that your tests have failed. Be sure to check your Travis build by clicking on the checkmark or red 'X' to dig into your specific test.
 
+Be sure to keep your Pull Request branch up-to-date with the target branch, otherwise our diffing tool may detect additional changes causing unwanted tests to run.
