@@ -1,8 +1,10 @@
 # What is the Results Website?
 
-The results website is located at www.techempower.com/benchmarks. 
+The results website is located at [www.techempower.com/benchmarks](https://www.techempower.com/benchmarks). 
 The results are gathered in rounds and then displayed on the results 
-website for comparison. 
+website for comparison.
+
+You can also find the results of our continuous benchmarking updated live at [tfb-status.techempower.com](https://tfb-status.techempower.com). 
 
 # FAQ
 

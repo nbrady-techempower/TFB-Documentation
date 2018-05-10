@@ -1,228 +1,59 @@
-If you're looking to quickly get started developing using the vagrant development environment, consider the [vagrant development environment guide](#vagrant-development-environment). 
+To get started developing you'll need to install [docker](https://docs.docker.com/install/) or see our [Quick Start Guide using vagrant](.#quick-start-guide-(vagrant))
 
-Take a look at the [Summary of Script Directories section](../Codebase/Summary-of-Script-Directories) to figure out which directory has scripts relevant to your use case (development or benchmarking).
+1. Clone TFB.
 
-#Installation Basics
+        $ git clone https://github.com/TechEmpower/FrameworkBenchmarks.git
 
-In order for SSH to work appropriately, the user on **each machine** will need to be 
-set up to have passwordless sudo access.
+2. Run a test.
 
-**Setting up the `user`**
+        $ ./tfb --mode verify --test gemini
 
-```bash
-sudo vim /etc/sudoers
-```
+### Explanation of the `./tfb` script
 
-You will need to change the line that reads `%sudo   ALL=(ALL:ALL) ALL` to 
-`%sudo   ALL=(ALL:ALL) NOPASSWD: ALL`. You should be able to exit your shell, ssh 
-back in and perform `sudo ls` without being prompted for a password.
+The run script is pretty wordy, but each and every flag is required. If you are using windows, either adapt the docker command at the end of the `./tfb` shell script (replacing `${SCRIPT_ROOT}` with `/c/path/to/FrameworkBenchmarks`), or use vagrant.
 
-**NOTE** Again, you will have to do this on every machine: server, database, client.
+The command looks like this: `docker run -it --rm --network tfb -v /var/run/docker.sock:/var/run/docker.sock -v [FWROOT]:/FrameworkBenchmarks techempower/tfb [ARGS]`
 
-**Setting up SSH**
+- `-it` tells docker to run this in 'interactive' mode and simulate a TTY, so that `ctrl+c` is propagated.
+- `--rm` tells docker to remove the container as soon as the toolset finishes running, meaning there aren't hundreds of stopped containers lying around.
+- `--network=tfb` tells the container to join the 'tfb' Docker virtual network
+- The first `-v` specifies which Docker socket path to mount as a volume in the running container. This allows docker commands run inside this container to use the host container's docker to create/run/stop/remove containers.
+- The second `-v` mounts the FrameworkBenchmarks source directory as a volume to share with the container so that rebuilding the toolset image is unnecessary and any changes you make on the host system are available in the running toolset container.
+- `techempower/tfb` is the name of toolset container to run
 
-You will need to also be able to SSH onto each of the 3 machines from any of the
-3 machines and not be prompted for a password. We use an identity file and authorized_keys
-file to accomplish this.
+#### A note on Windows:
 
-```bash
-ssh-keygen -t rsa
-```
+- Docker expects Linux-style paths. If you cloned on your `C:\` drive, then `[ABS PATH TO THIS DIR]` would be `/c/FrameworkBenchmarks`.
+- [Docker for Windows](https://www.docker.com/docker-windows) understands `/var/run/docker.sock` even though that is not a valid path on Windows. [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) **may** not - use at your own risk.
 
-This will prompt you for various inputs; leave them all blank and just hit 'enter'.
-Next, you will want to allow connections identified via that key signature, so add
-it to your authorized keys.
+## Quick Start Guide (Vagrant)
 
-```bash
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-```
+Get started developing quickly by utilizing vagrant with TFB. [Git](https://git-scm.com), 
+[Virtualbox](https://www.virtualbox.org/) and [vagrant](https://www.vagrantup.com/) are 
+required.
 
-Next, you will need these exact same files to exist on the other 2 machines.
-If you properly set up your user account on all 3 machines, then this will not prompt
-you for a password (if it does, go back to "Setting up the `user`" and fix it).
+1. Clone TFB.
 
-```bash
-# Export some variables so you can copy/paste the rest.
-export TFB_SERVER_USER=[your server user]
-export TFB_SERVER_HOST=[your server ip]
-export TFB_DATABASE_USER=[your database user]
-export TFB_DATABASE_HOST=[database ip]
-export TFB_CLIENT_USER=[your client user]
-export TFB_CLIENT_HOST=[client ip]
-# Set up the database machine for SSH
-cat ~/.ssh/id_rsa.pub | ssh $TFB_DATABASE_USER@$TFB_DATABASE_HOST 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'
-scp ~/.ssh/id_rsa $TFB_DATABASE_USER@$TFB_DATABASE_HOST:~/.ssh/id_rsa
-scp ~/.ssh/id_rsa.pub $TFB_DATABASE_USER@$TFB_DATABASE_HOST:~/.ssh/id_rsa.pub
-# Set up the client machine for SSH
-cat ~/.ssh/id_rsa.pub | ssh $TFB_CLIENT_USER@$TFB_CLIENT_HOST 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'
-scp ~/.ssh/id_rsa $TFB_CLIENT_USER@$TFB_CLIENT_HOST:~/.ssh/id_rsa
-scp ~/.ssh/id_rsa.pub $TFB_CLIENT_USER@$TFB_CLIENT_HOST:~/.ssh/id_rsa.pub
-```
+        $ git clone https://github.com/TechEmpower/FrameworkBenchmarks.git
 
-Now, test it all out, you should be able to execute all of the following without
-being prompted for a password. **NOTE** The first time you SSH to these machines
-(read: in this step) you will be prompted to accept the signature - do it.
+2. Change directories
 
-```bash
-# Test your database SSH setup
-ssh $TFB_DATABASE_HOST
-# Accept the signature
-# You are connected to the database machine!
-sudo ls
-# This should NOT prompt for a password and list the directory's contents
-# If this is not true, go back to "Setting up the `user`" and fix it
-exit
-# Test your client SSH setup
-ssh $TFB_CLIENT_HOST
-# Accept the signature
-# You are connected to the client machine!
-sudo ls
-# We also need to test that we can SSH back to the server machine
-ssh [enter your server ip again]
-# Accept the signature
-# You are connected to the server machine!
-sudo ls
-# If this works, you are golden!
-exit
-# Back on client
-exit
-# Back on initial ssh connection to server machine
-```
+        $ cd FrameworkBenchmarks/deployment/vagrant
 
-**Setting up prerequisites**
+3. Build the vagrant virtual machine
 
-The suite requires that a few libraries and applications are installed in order to run.
-First, clone our repository.
+        $ vagrant up
 
-```bash
-git clone https://github.com/TechEmpower/FrameworkBenchmarks.git
-cd FrameworkBenchmarks
-source toolset/setup/linux/prerequisites.sh
-```
+4. Run a test
 
-To install TFB components onto the various servers, you must provide
-basic login details for each server (e.g. usernames, IP addresses, 
-private key files). While these details can all be passed 
-using command line flags, it's easier to use a configuration 
-file and avoid having huge flag lists in your commands. 
+        $ vagrant ssh
+        $ tfb --mode verify --test gemini
 
-```bash
-cp benchmark.cfg.example benchmark.cfg
-vim benchmark.cfg
-```
 
-You will need to change, at a minimum, the following:
+## Add a New Test
 
-* `client_identity_file` Set to `/home/[username]/.ssh/id_rsa`
-* `client_user` Set to your username
-* `database_identity_file` Set to `/home/[username]/.ssh/id_rsa`
-* `database_user` Set to your username
+Either on your computer, or once you open an SSH connection to your vagrant box, start the new test initialization wizard.
 
-Now in your `/etc/hosts` file add the following lines, replacing `127.0.0.1` with the appropriate IPs:
+        vagrant@TFB-all:~/FrameworkBenchmarks$ ./tfb --new
 
-```
-127.0.0.1 TFB-database
-127.0.0.1 TFB-client
-127.0.0.1 TFB-server
-```
-
-At this point, you should be able to run a benchmark of the entire
-suite or selectively run individual benchmarks. Additionally, you
-can test your setup by running a verification on one of the stable
-frameworks. Since we wrote it, we tend to test with `gemini`.
-
-From the `FrameworkBenchmarks` directory run:
-
-```bash
-tfb --mode verify --test gemini
-```
-
-You can find the results for this verification step under the directory:
-`results/latest/logs/gemini`. There should be an `err` and an `out`
-file.
-
-**Tuning your Machine (optional)**
-
-In some cases, particularly if you are running the tests on high-performance machines, you may start to see high latency and poor results due to certain system configurations throttling the power of your hardware. Warning signs to look out for include:
-
-* High max latency for the wrk tests with a large number of concurrent connections when running a high-performance framework (libreactor, undertow, gemini, etc.)
-* Requests/second decreasing rather than increasing as the number of concurrent connections goes up
-* When running htop during a test, you see very high (~90%) kernal time (the red) and relatively low (~10%) program time (the green)
-* Running an iperf test between two of your machines with a fairly high number of concurrent connections (using the -P16 or -P32 flag) shows a drop in overall throughput
-* You are generally seeing results that are much lower than you would expect, given the hardware you are running your 
-tests on
-
-To address these issues, we've had the most success with the [Ubuntu Tuned](https://github.com/edwardbadboy/tuned-ubuntu) tool configured to use the `latency-performance` profile. You *should* only have to use this on the App Server machine. First, install it on your system:
-```bash
-sudo apt-get install git git-core build-essential
-sudo apt-get install rpm python-decorator python-dbus python-gobject python-pyudev python-configobj
-git clone https://github.com/edwardbadboy/tuned-ubuntu.git
-cd tuned-ubuntu
-sudo make install
-```
-
-Restart your machine. Then start up the service and set your profile:
-```bash
-sudo service tuned start
-sudo tuned --profile latency-performance
-```
-
-And that should do it! 
-
-# Vagrant Development Environment
-
-The simplest way to begin development is to set up [vagrant](https://www.vagrantup.com/). 
-
-## Attention Windows Users
-
-Because this setup uses file sharing between your host machine and the virtual machine, you will need to do the following to make sure this works properly.
-
-  * **Before** you clone the repo, you will need to make sure that you set autoclrf to input in git. `git config --global core.autocrlf input` or edit your git config file directly.
-  * Make sure that any editors you use save files with unix style line endings. See: [IntelliJ](https://www.jetbrains.com/help/idea/2016.3/configuring-line-separators.html), [Eclipse](http://stackoverflow.com/questions/1886185/eclipse-and-windows-newlines), [Sublime Text 3](https://medium.com/@Rascle/fix-line-endings-in-sublime-text-3-35d926d1c041#.2gemuy5of)
-  * Finally, make sure the shell you do `vagrant up` and `vagrant ssh` from is run with Administrator privileges otherwise some frameworks will fail.
-  
-## Bringing up the Vagrant VM
-    
-```bash
-# Clone the project, then move into the right directory 
-$ cd ~/FrameworkBenchmarks/deployment/vagrant
-# Turn on the VM. Takes at least 20 minutes
-$ vagrant up
-# Enter the VM, then run a test
-$ vagrant ssh
-vagrant@TFB-all:~$ cd ~/FrameworkBenchmarks
-vagrant@TFB-all:~/FrameworkBenchmarks$ tfb --mode verify --test gemini
-```
-
-## Vagrant Snapshots
-
-After you initially setup the virtual machine using `vagrant up`, it is often smart to create a snapshot
-of the VM state at that point. This allows you to easily reset the VM to a clean state without
-having to destroy and recreate it. There are multiple vagrant plugins to enable snapshotting. 
-Here is one options: 
-
-```bash
-# Create the VM
-$ vagrant up
-# Before doing anything else, install the snapshot plugin
-$ vagrant plugin install vagrant-vbox-snapshot
-# Now take the initial snapshot (vm name is default)
-$ vagrant snapshot take default initial
-Taking snapshot initial
-0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
-# Use VM as normal
-$ vagrant ssh
-```
-
-## Vagrant VirtualBox Guest
-Optional: You can automatically update VirtualBox Guest Additions to the current version of VirtualBox that is being used every time you enter 'vagrant up'. This will also allow you to keep all of your vagrant mounts after kernel upgrades in VirtualBox. Run the following one time after 'cd ~/FrameworkBenchmarks/deployment/vagrant-development' (must already have RVM installed):
-```bash
-# To install the plugin:
-$ vagrant plugin install vagrant-vbguest
-# From now on every 'vagrant up' will check and install the correct
-# guest additions, but you can also force an update this way:
-$ vagrant plugin update vagrant-vbguests
-# You can also force vagrant to reload and recheck for updates this way:
-$ vagrant reload
-```
+This will walk you through the entire process of creating a new test to include in the suite.
