@@ -29,7 +29,6 @@ repository](https://github.com/TechEmpower/TFB-Documentation).
  3. Make additions or updates to the documentation.
  4. Optional - Use
 [mkdocs](http://docs.readthedocs.org/en/latest/getting_started.html#in-markdown)
-
  to preview your changes
      * Run `mkdocs serve` in your command line. If there is an error
      building the docs locally, the error will be displayed within your 
@@ -39,7 +38,6 @@ repository](https://github.com/TechEmpower/TFB-Documentation).
 [TechEmpower/TFB-Documentation](https://github.com/TechEmpower/TFB-Documentation).
  6. Once your pull request is accepted, the site 
 [frameworkbenchmarks.rtfd.org](http://frameworkbenchmarks.readthedocs.org/en/latest/)
- 
  will automatically be updated.
  
  # Quick-Start with mkdocs

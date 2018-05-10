@@ -13,8 +13,7 @@ follow the steps in [Additional Information](#additional-information) below.
  ### Adding a New Test Without the Installation Wizard
  
  When adding a new framework or new test to an existing framework, please follow
-
- these steps:
+these steps:
  
  * Add/Update a [test docker
 file](../Codebase/Framework-Files#test-docker-file).
@@ -23,7 +22,6 @@ file](../Codebase/Framework-Files#test-docker-file).
  * Implement at least one
 [test](../Project-Information/Framework-Tests#test-types) 
  (we'd be even happier with six completed tests). When creating a database test,
-
  use the table/collection `hello_world`. Our database setup scripts are stored 
  inside the `config/` folder if you need to see the database schema.
  * Add/Update a [README](Readme-Formats#language-readmes) for your 
