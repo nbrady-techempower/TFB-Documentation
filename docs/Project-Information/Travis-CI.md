@@ -106,8 +106,8 @@ file. You can use your setup.py's stop function to cat the file to stdout.
  This may cause issues with the Travis-CI **Max Console Output** limitation. An
 alternative is to upload the file to an online service like sprunge: 
  
-     subprocess.call("cat <my-log-file> | curl -F 'sprunge=<-'
-http://sprunge.us", shell=True, stdout=logfile)
+     subprocess.call("cat <my-log-file> | curl -F \
+     'sprunge=<-' http://sprunge.us", shell=True, stdout=logfile)
  
  If you need to use these solutions, please be sure to remove them (or comment
 them out) before you send in a pull request.

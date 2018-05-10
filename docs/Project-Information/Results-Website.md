@@ -32,8 +32,9 @@ requests count provided by Wrk less the errors. Looking at the wsgi-nginx-uwsgi
 results again, to determine RPS, we use code that works like this:
  
          totalErrors = httpErrors + socketErrors;
-         rps = (totalRequestsReportedByWrk - totalErrors) /
-testDurationInSeconds;
-         Hence for uwsgi-nginx-uswgi it is:
+         rps = (totalRequestsReportedByWrk - totalErrors) / testDurationInSeconds;
+
+Hence for uwsgi-nginx-uswgi it is:
+
          (2117047 - 459212) / 15 = 110,522 successful RPS.  
  

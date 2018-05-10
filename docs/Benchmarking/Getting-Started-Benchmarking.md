@@ -63,9 +63,7 @@ all the tests in the codebase.
  ```
  docker run \
    --network=host \
-   --mount
-type=bind,source=/home/techempower/FrameworkBenchmarks,target=/FrameworkBenchmarks
-\
+   --mount type=bind,source=/home/techempower/FrameworkBenchmarks,target=/FrameworkBenchmarks \
    techempower/tfb \
    --server-host 10.0.0.1 \
    --database-host 10.0.0.2 \
